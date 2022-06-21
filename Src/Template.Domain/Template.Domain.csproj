@@ -6,13 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
+	<ItemGroup>
     <Compile Remove="Localization\**" />
     <EmbeddedResource Remove="Localization\**" />
     <None Remove="Localization\**" />
   </ItemGroup>
 
-  <ItemGroup>
+	<ItemGroup>
     <Folder Include="Entities\Identity\" />
     <Folder Include="Entities\Order\" />
   </ItemGroup>

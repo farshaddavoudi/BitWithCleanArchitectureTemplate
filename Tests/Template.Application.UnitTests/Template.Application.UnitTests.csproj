@@ -20,4 +20,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Src\Template.Application\Template.Application.csproj" />
+    <ProjectReference Include="..\..\Src\Template.Infrastructure\Template.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
