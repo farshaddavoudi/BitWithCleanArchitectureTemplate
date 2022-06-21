@@ -1,0 +1,170 @@
+﻿@page "/"
+
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Hosting
+@using Microsoft.Extensions.Hosting
+@using Template.Domain.Shared
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@attribute [AllowAnonymous]
+
+@inject IWebHostEnvironment WebHostEnvironment;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title> در حال ورود به سامانه غذا </title>
+    <base href="~/" />
+    <link rel="stylesheet" href="_content/Telerik.UI.for.Blazor/css/kendo-theme-default/all.css" />
+    <link rel="stylesheet" href="_content/Radzen.Blazor/css/default-base.css">
+    <link rel="stylesheet" href="_content/Blazored.Toast/blazored-toast.min.css" />
+    <link rel="stylesheet" href="_content/Blazored.Modal/blazored-modal.css" />
+    <link rel="stylesheet" href="_content/Blazor.PersianDatePicker/datepicker.css" />
+    <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/bit.blazorui.min.css" />
+    <link rel="stylesheet" href="css/site.css" />
+    @*<link rel="stylesheet" href="ATA.Food.Client.Web.styles.css" />*@
+    <link rel="manifest" href="manifest.json">
+    <style>
+        #blazor-swup {
+            position: fixed;
+            background: #fff;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            padding: 20px;
+            text-align: center;
+            display: none;
+            z-index: 99999;
+            direction: ltr;
+        }
+
+        .blazor-swup-container {
+            width: 70%;
+            margin: 0 auto;
+            margin-top: 45px;
+            font-family: aeonik-regular, iranyekan, tahoma;
+            direction: ltr;
+        }
+
+        .blazor-swup-title,
+        #blazor-swup-percent {
+            font-size: 21px;
+        }
+
+        .blazor-swup-description {
+            font-size: 14px;
+            margin-bottom: 20px !important;
+            margin-top: 10px !important;
+        }
+
+        .blazor-swup-progress {
+            border: 1px solid #ebebff;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            width: 100%;
+            height: 21px;
+        }
+
+        #blazor-swup-progress-bar {
+            background-color: #538fc3;
+            border-radius: 2px;
+            height: 19px;
+        }
+
+        #blazor-swup-reload {
+            display: none;
+            margin-bottom: 8px;
+        }
+
+        #blazor-swup-assets {
+            font-size: 10px;
+            overflow: auto;
+            height: 666px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body class="rtl" dir="rtl" style="margin: 0">
+
+    @if (!WebHostEnvironment.IsDevelopment())
+    {
+        <div id="blazor-swup">
+            <div class="blazor-swup-container">
+                <p class="blazor-swup-title">New version is available</p>
+                <p class="blazor-swup-description">Downloading updates. Please wait...</p>
+                <div class="blazor-swup-progress">
+                    <div id="blazor-swup-progress-bar" style="width: 0%"></div>
+                </div>
+                <p id="blazor-swup-percent">0 %</p>
+            </div>
+        </div>
+    }
+
+    @{
+        var componentType = typeof(AppMetadata);
+
+#if BlazorClient
+    componentType = typeof(ATA.Food.Client.Web.App);
+#endif
+    }
+
+    <component type="componentType" render-mode="@RenderMode.WebAssembly" />
+
+    <div id="blazor-error-ui" style="display: none">
+        متاسفانه خطایی روی داده است. لطفا صفحه را مجدد بارگزاری نمایید. در صورت عدم رفع مشکل با پشتیبانی تماس بگیرید
+        <a href="" class="reload btn btn-sm">بارگزاری مجدد صفحه</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    @if (WebHostEnvironment.IsProduction())
+    {
+        <script>
+            var progressEl = document.getElementById('blazor-swup');
+            var progressBar = document.getElementById('blazor-swup-progress-bar');
+            var percentLabel = document.getElementById('blazor-swup-percent');
+            var reloadButton = document.getElementById('blazor-swup-reload');
+            function blazorSwup(type, data) {
+                switch (type) {
+                case 'updatefound':
+                    return console.log('new version is downloading...');
+                case 'statechange':
+                    return console.log('new version state has changed to:', data.currentTarget.state);
+                case 'installing':
+                    progressEl.style.display = 'block';
+                    return console.log('installing new version:', data.version);
+                case 'installed':
+                    setTimeout(data.reload, 100);
+                    return console.log('new version installed:', data.version);
+                case 'progress':
+                    const percent = Math.round(data.percent);
+                    progressBar.style.width = `${percent}%`;
+                    percentLabel.innerHTML = `${percent} %`;
+                    return console.log('asset downloaded:', data);
+                case 'activate':
+                    return console.log('new version activated:', data.version);
+                }
+            }
+        </script>
+        <script src="_framework/blazor.webassembly.js" autostart=false></script>
+        <script src="_content/Bit.Tooling.Bswup/bit-bswup.js" scope="/" sw="service-worker.js" handler="blazorSwup"></script>
+    }
+    else
+    {
+        <script src="_framework/blazor.webassembly.js"></script>
+    }
+
+    <script src="scripts/alertify.min.js"></script>
+    <script src="scripts/blazor.extensions.js"></script>
+    <script src="_content/Blazor.PersianDatePicker/datepicker.min.js"></script>
+    <script src="_content/Telerik.UI.for.Blazor/js/telerik-blazor.js"></script>
+    <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
+    <script src="_content/Bit.Client.Web.BlazorUI/scripts/bit.blazorui.min.js"></script>
+    <script src="_content/Blazored.Modal/blazored.modal.js"></script>
+</body>
+</html>

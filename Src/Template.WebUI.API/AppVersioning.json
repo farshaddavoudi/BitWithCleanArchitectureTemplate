@@ -1,0 +1,89 @@
+﻿[
+  {
+    "Version": "1.0.5", //Max 1 dig for MINOR and PATCH in { MAJOR.MINOR.PATCH } Semantic Versioning
+    "Date": "1401/03/08", //Jalali
+    "Changes": [
+      {
+        "Title": "افزایش سرعت برنامه"
+      }
+    ]
+  },
+  
+  {
+    "Version": "1.0.4", //Max 1 dig for MINOR and PATCH in { MAJOR.MINOR.PATCH } Semantic Versioning
+    "Date": "1401/02/31", //Jalali
+    "Changes": [
+      {
+        "Title": "اصلاح نمایش ستون تاریخ ثبت غذا در گزارش لیست غذای من در موبایل"
+      }
+    ]
+  },
+  
+  {
+    "Version": "1.0.3", //Max 1 dig for MINOR and PATCH in { MAJOR.MINOR.PATCH } Semantic Versioning
+    "Date": "1401/02/28", //Jalali
+    "Changes": [
+      {
+        "Title": "اصلاح نمایش حالت نیم پرس در صورتی که هیچ غذایی انتخاب نشده باشد"
+      },
+      {
+        "Title": "اضافه کردن نیم پرس به گزارش لیست غذای من و گزارش‌های مدیریتی"
+      },
+      {
+        "Title": "حذف ستون‌های اضافی در گزارش لیست غذای من"
+      },
+      {
+        "Title": "اصلاحات ظاهری و رابط کاربری برنامه"
+      }
+    ]
+  },
+  {
+    "Version": "1.0.2", //Max 1 dig for MINOR and PATCH in { MAJOR.MINOR.PATCH } Semantic Versioning
+    "Date": "1401/02/26", //Jalali
+    "Changes": [
+      {
+        "Title": "اصلاح تاریخ ثبت غذا در گزارش غذای من"
+      },
+      {
+        "Title": "اصلاح قابلیت انتخاب محل غذا برای برخی پرسنل"
+      },
+      {
+        "Title": "اصلاحات ظاهری و رابط کاربری برنامه"
+      }
+    ]
+  },
+  {
+    "Version": "1.0.1", //Max 1 dig for MINOR and PATCH in { MAJOR.MINOR.PATCH } Semantic Versioning
+    "Date": "1401/02/26", //Jalali
+    "Changes": [
+      {
+        "Title": "رفع مشکل سفارش غذای همکاران تبریز"
+      }
+    ]
+  },
+  {
+    "Version": "1.0.0", //Max 1 dig for MINOR and PATCH in { MAJOR.MINOR.PATCH } Semantic Versioning
+    "Date": "1401/02/22", //Jalali
+    "Changes": [
+      {
+        "Title": "به سامانه‌ی جدید انتخاب غذای آتا خوش آمدید. برای تجربه کاربری بهتر در گوشی تلفن همراه، آن را (به کمک گزینه‌ی Add to home screen) نصب نمایید", //Required
+        "Description": [
+          //"Delete unused properties of Samples",
+          //"Add Sample Categories based on new format"
+        ]
+      },
+      {
+        "Title": "گزارش غذاهای انتخابی از گزینه‌ی <<لیست غذاهای من>> قابل مشاهده می‌باشد"
+      },
+      {
+        "Title": "ثبت سفارش فقط برای غذاهای بعد از 3 روز آینده مجاز می‌باشد"
+      },
+      {
+        "Title": "ثبت نظر فقط برای غذای دیروز و امروز (از ساعت 3 بعدازظهر روز جاری به بعد) مجاز می‌باشد"
+      },
+      {
+        "Title": "امکان ثبت سفارش به صورت نیم پرس افزوده شده است"
+      }
+    ]
+  }
+]

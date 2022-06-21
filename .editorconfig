@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# AsyncFixer03: Fire-and-forget async-void methods or delegates
+dotnet_diagnostic.AsyncFixer03.severity = suggestion

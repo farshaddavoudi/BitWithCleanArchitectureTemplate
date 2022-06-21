@@ -1,0 +1,36 @@
+<Project>
+	<PropertyGroup>
+		<BlazorMode>Client2</BlazorMode>
+		<!-- You can use either Client or None, for example: <BlazorMode>Client</BlazorMode>-->
+		<DefineConstants Condition=" '$(BlazorMode)' == 'Client' ">$(DefineConstants);BlazorClient</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>1.0.0</Version>
+		<TargetFramework>net6.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<NoWarn>$(NoWarn);NU1701;1702;1591;NU1602;CS8609;CS8610;CS8619;CS8632</NoWarn>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
+		<DebugType>portable</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Using Include="System" />
+		<Using Include="System.IO" />
+		<Using Include="System.Threading.Tasks" />
+		<Using Include="System.Linq"/>
+		<Using Include="System.Collections.Generic"/>
+		<Using Include="Microsoft.Extensions.DependencyInjection" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AsyncFixer" Version="1.5.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+</Project>

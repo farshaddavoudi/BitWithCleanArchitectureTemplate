@@ -1,0 +1,19 @@
+﻿{
+  "BitCodeGeneratorConfigs": {
+    "BitCodeGeneratorMappings": [
+      {
+        "GenerationType": "CSharpHttpClient",
+        "Route": "Food",
+        "DestinationFileName": "Bit\\ATA.Food.Model.Context",
+        "SourceProjects": [
+          {
+            "Name": "ATA.Food.Server.Api"
+          }
+        ],
+        "DestinationProject": {
+          "Name": "ATA.Food.Client.Web"
+        }
+      }
+    ]
+  }
+}

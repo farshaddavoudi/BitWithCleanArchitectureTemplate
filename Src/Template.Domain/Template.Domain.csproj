@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Localization\**" />
+    <EmbeddedResource Remove="Localization\**" />
+    <None Remove="Localization\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\Identity\" />
+    <Folder Include="Entities\Order\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ATA.Bit.Model" Version="6.2.5" />
+  </ItemGroup>
+
+</Project>

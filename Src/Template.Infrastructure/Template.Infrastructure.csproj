@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Clients\" />
+    <Folder Include="Persistence\EF\Configuration\" />
+    <Folder Include="Persistence\EF\Repository\Order\" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ATA.Bit.Data" Version="6.2.5" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
+		<PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.4" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Bit.Universal.Data" Version="9.0.0" />
+		<PackageReference Include="Bit.Universal.Model" Version="9.0.0" />
+		<PackageReference Include="EFCore.BulkExtensions" Version="6.4.4" />
+		<PackageReference Include="ATA.Bit.Data" Version="6.2.5" />
+		<PackageReference Include="ATA.Bit.Shared" Version="6.2.5" />
+		<PackageReference Include="Bit.Universal.Core" Version="9.0.0" />
+		<PackageReference Include="ATA.Bit.Server" Version="6.2.5" />
+		<PackageReference Include="Bit.Server.Data.EntityFrameworkCore" Version="9.0.0" />
+		<PackageReference Include="Bit.Server.IdentityServer" Version="9.0.0" />
+		<PackageReference Include="ATA.Broker.CDN" Version="6.2.5" />
+		<PackageReference Include="ATA.Broker.SSOSecurity" Version="6.2.5" />
+		<PackageReference Include="ATA.Broker.Workflow" Version="6.2.5" />
+		<PackageReference Include="Dapper" Version="2.0.123" />
+		<PackageReference Include="Serilog.Enrichers.ClientInfo" Version="1.1.4" />
+		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.1-dev-00787" />
+		<PackageReference Include="Serilog.Exceptions" Version="8.1.0" />
+		<PackageReference Include="Serilog.Sinks.Seq" Version="5.1.1" />
+
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Template.Application\Template.Application.csproj" />
+  </ItemGroup>
+
+</Project>
