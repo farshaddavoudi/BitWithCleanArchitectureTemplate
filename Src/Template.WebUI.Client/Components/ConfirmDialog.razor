@@ -1,0 +1,50 @@
+﻿<TelerikWindow Class="popup-window-custom-wrapper confirm-dialog" Width="100%" Height="100%" Centered="true" Visible="IsVisible">
+    <WindowContent>
+
+        <div class="popup-window-content">
+
+            <div class="col-3 popup-window-content-card" style="min-height: 100px;">
+
+                <div class="flex-row-reverse space-between">
+                    <div class=" margin-l-r-15 justify-content-end">
+                        <span class="close-icon-container" @onclick="Hide">
+                            <img src="@IconUrls.Close" />
+                        </span>
+                    </div>
+
+                    <div class="popup-content-title"> @Title </div>
+                </div>
+
+                <div class="popup-content-body margin-10">
+                    @Text
+                </div>
+
+                <div class="margin-l-r-15 margin-right-20">
+                    @if (ChildContent is null)
+                    {
+                        <div class="justify-content-end">
+                            <button class="primary-button" disabled="@_isLoading" @onclick="OnActionConfirm">
+                                @if (_isLoading)
+                                {
+                                    <BitSpinner Size="BitSpinnerSize.Medium" />
+                                }
+                                else
+                                {
+                                    <span>حذف</span>
+                                }
+                            </button>
+                            <button class="default-button margin-right-10" @onclick="Hide">
+                                انصراف
+                            </button>
+                        </div>
+                    }
+                    else
+                    {
+                        @ChildContent
+                    }
+                </div>
+            </div>
+        </div>
+
+    </WindowContent>
+</TelerikWindow>

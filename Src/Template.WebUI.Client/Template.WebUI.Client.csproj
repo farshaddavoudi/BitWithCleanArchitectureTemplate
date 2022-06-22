@@ -41,7 +41,9 @@
 	<ItemGroup>
 		<Content Remove="compilerconfig.json" />
 		<Content Remove="wwwroot\ImageUrls.cs" />
+		<Content Remove="wwwroot\service-worker.js" />
 		<None Include="compilerconfig.json" />
+		<None Include="wwwroot\service-worker.js" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -96,10 +98,6 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Template.Application\Template.Application.csproj" PrivateAssets="All" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
 	</ItemGroup>
 
 	<ItemGroup>

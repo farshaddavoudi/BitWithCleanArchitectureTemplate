@@ -1,0 +1,24 @@
+﻿<TelerikWindow Class="window-custom-wrapper" Width="100%" Height="100%" Centered="true" Visible="Visibility">
+    <WindowContent>
+        <div class="popup-window-content">
+
+            <div class="col-3 popup-window-content-card" style="min-height:250px;">
+
+                <div class=" margin-l-r-15 justify-content-end">
+                    <span @onclick="() => Visibility = false"><i class="icon-close"></i></span>
+                </div>
+                <div class="popup-content-title" style="font-weight: bold;">@Title</div>
+
+                <div class="popup-content-body margin-10">
+                    @Text
+                </div>
+
+                <div class="margin-l-r-15 margin-right-20">
+                    @ChildContent
+                </div>
+            </div>
+        </div>
+    </WindowContent>
+</TelerikWindow>
+
+

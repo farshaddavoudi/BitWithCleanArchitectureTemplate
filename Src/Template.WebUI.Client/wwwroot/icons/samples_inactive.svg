@@ -1,0 +1,13 @@
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.9995 5.27018V11.9785" stroke="#9292A8" stroke-width="2" stroke-linecap="square"/>
+<path d="M24.2524 11.993L17.8724 14.066" stroke="#9292A8" stroke-width="2" stroke-linecap="square"/>
+<path d="M20.7185 22.8714L16.7754 17.4442" stroke="#9292A8" stroke-width="2" stroke-linecap="square"/>
+<path d="M9.28081 22.8709L13.2239 17.4437" stroke="#9292A8" stroke-width="2" stroke-linecap="square"/>
+<path d="M5.74684 11.9926L12.1268 14.0656" stroke="#9292A8" stroke-width="2" stroke-linecap="square"/>
+<circle cx="15" cy="15" r="5" fill="white" stroke="#9292A8" stroke-width="2"/>
+<circle cx="15" cy="3.75" r="2.5" fill="white" stroke="#9292A8" stroke-width="2"/>
+<circle cx="25.6996" cy="11.5232" r="2.5" transform="rotate(72 25.6996 11.5232)" fill="white" stroke="#9292A8" stroke-width="2"/>
+<circle cx="21.6125" cy="24.1012" r="2.5" transform="rotate(144 21.6125 24.1012)" fill="white" stroke="#9292A8" stroke-width="2"/>
+<circle cx="8.38735" cy="24.1017" r="2.5" transform="rotate(-144 8.38735 24.1017)" fill="white" stroke="#9292A8" stroke-width="2"/>
+<circle cx="4.30057" cy="11.5238" r="2.5" transform="rotate(-72 4.30057 11.5238)" fill="white" stroke="#9292A8" stroke-width="2"/>
+</svg>

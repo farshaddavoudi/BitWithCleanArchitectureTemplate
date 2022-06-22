@@ -1,0 +1,35 @@
+﻿<div class="toast-component @NotifType.ToDisplayName()">
+    <div class="notif-type-icon-wrapper">
+        <img src="@_iconUrl" />
+    </div>
+
+    <div class="notif-message-wrapper">
+        @Message
+    </div>
+</div>
+
+@code {
+    [CascadingParameter] private BlazoredToast ToastInstance { get; set; }
+
+    [Parameter] public NotificationType NotifType { get; set; }
+
+    [Parameter] public string Message { get; set; }
+
+    string _iconUrl;
+
+    protected override void OnInitialized()
+    {
+        _iconUrl = NotifType switch
+        {
+            NotificationType.Success => IconUrls.SuccessToast,
+            NotificationType.Error => IconUrls.ErrorToast,
+            NotificationType.Warning => IconUrls.WarningToast,
+            NotificationType.Notify => IconUrls.InfoToast,
+            NotificationType.Message => IconUrls.InfoToast,
+            _ => _iconUrl
+            };
+
+        base.OnInitialized();
+    }
+
+}

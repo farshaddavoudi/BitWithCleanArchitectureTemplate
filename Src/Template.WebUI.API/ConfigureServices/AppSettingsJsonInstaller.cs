@@ -2,7 +2,7 @@
 using Template.Application.Common.Contracts;
 using Template.Domain.Options;
 
-namespace Template.Application.ConfigureServices;
+namespace Template.WebUI.API.ConfigureServices;
 
 public class AppSettingsJsonInstaller : IInstaller
 {

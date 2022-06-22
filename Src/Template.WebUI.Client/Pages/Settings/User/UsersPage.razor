@@ -1,0 +1,86 @@
+﻿@page "/settings/users"
+@using ATABit.Shared
+
+@inherits BitPageBase
+
+<PageTitle> @PageTitles.UsersPage.Title </PageTitle>
+
+<TelerikLoaderContainer Text="" Visible="@IsLoading" />
+
+<!-- Page Heading Title -->
+<section>
+    <div class="page-header-wrapper">
+        @if (PageOperationType == OperationType.Filter)
+        {
+            <TopBar PageName="@PageTitles.UsersPage.Title" PageDescription="مشاهده‌ی کاربرانی که در سامانه‌ی غذا دارای نقش می‌باشند" />
+        }
+    </div>
+</section>
+
+<!-- User Filter -->
+<section>
+    @if (PageOperationType == OperationType.Filter)
+    {
+        <div class="page-box-wrapper">
+            <div class="row">
+                <div class="col-3">
+                    <label class="input-label">کاربر</label>
+                    <div class="searchbar-custom-wrapper">
+                        <img src="@IconUrls.Search" />
+                        <TelerikTextBox class="full-width"
+                                    PlaceHolder="جستجو با شناسه یا نام یا کد پرسنلی یا نقش"
+                                    ValueChanged="SearchTermChanged">
+                        </TelerikTextBox>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</section>
+
+<!-- User Grid -->
+<section>
+    <div class="page-grid-wrapper mt-4">
+
+        <TelerikGrid TItem="@UserDto"
+                     @ref="@UserGridRef"
+                     Height="100%"
+                     Pageable="true"
+                     PageSize="20"
+                     Sortable="true"
+                     Groupable="false"
+                     Resizable="true"
+                     Reorderable="true"
+                     OnRead=@OnReadHandler>
+            <GridColumns>
+                <GridColumn Field="@(nameof(UserDto.UserId))" Title="شناسه‌ی کاربر" Width="100px" Sortable="true" />
+                <GridColumn Field="@(nameof(UserDto.FullName))" Title="نام کاربر" Width="100px" Sortable="true" />
+                <GridColumn Field="@(nameof(UserDto.PersonnelCode))" Title="شماره پرسنلی" Width="100px" Sortable="true" />
+                <GridColumn Field="@(nameof(UserDto.PostTitle))" Title="پست سازمانی" Width="100px" Sortable="true" />
+                <GridColumn Field="@(nameof(UserDto.Roles))" Title="نقش‌ها" Width="300px" Sortable="false">
+                    <Template>
+                        <div class="flex-wrap">
+                            @{
+                                var user = (UserDto)context;
+
+                                foreach (var role in user.UserRolePairs)
+                                {
+                                    <div class="chip-badge">@role.RoleName</div>
+                                }
+                            }
+                        </div>
+                    </Template>
+                </GridColumn>
+                <AuthorizeView Policy="@Claims.Settings_Permissions_View">
+                    <GridColumn Field="@(nameof(UserDto.UserId))" Title="عملیات" Width="100px" Locked="true" Sortable="false">
+                        <Template Context="gridContext">
+                            @{
+                                <TelerikButton Class="default-button" OnClick="@(() => OpenSecurityToManageRole())">مدیریت نقش‌ها</TelerikButton>
+                            }
+                        </Template>
+                    </GridColumn>
+                </AuthorizeView>
+            </GridColumns>
+        </TelerikGrid>
+    </div>
+</section>
