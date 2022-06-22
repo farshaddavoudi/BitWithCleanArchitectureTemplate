@@ -2,5 +2,5 @@
 
 public class URLOptions
 {
-    public string? AppBaseURL { get; set; }
+    public string? AppURL { get; set; }
 }

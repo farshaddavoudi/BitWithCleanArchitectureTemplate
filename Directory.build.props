@@ -1,6 +1,6 @@
 <Project>
 	<PropertyGroup>
-		<BlazorMode>Client2</BlazorMode>
+		<BlazorMode>Client</BlazorMode>
 		<!-- You can use either Client or None, for example: <BlazorMode>Client</BlazorMode>-->
 		<DefineConstants Condition=" '$(BlazorMode)' == 'Client' ">$(DefineConstants);BlazorClient</DefineConstants>
 	</PropertyGroup>

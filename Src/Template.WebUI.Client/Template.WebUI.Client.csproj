@@ -2,11 +2,52 @@
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
-		<Nullable>enable</Nullable>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<UseBlazorWebAssembly>true</UseBlazorWebAssembly>
-		<ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+		<BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
+		<BlazorWebAssemblyPreserveCollationData>false</BlazorWebAssemblyPreserveCollationData>
+		<InvariantGlobalization>false</InvariantGlobalization>
+		<TypeScriptToolsVersion>4.1</TypeScriptToolsVersion>
+		<Nullable>disable</Nullable>
+		<ServiceWorkerAssetsManifest Condition="'$(Configuration)' == 'Release'">service-worker-assets.js</ServiceWorkerAssetsManifest>
+		<BlazorCacheBootResources Condition="'$(Configuration)' == 'Release'">false</BlazorCacheBootResources>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="wwwroot\css\pages\borrow\**" />
+		<Compile Remove="wwwroot\css\pages\home\**" />
+		<Compile Remove="wwwroot\css\pages\permission\**" />
+		<Compile Remove="wwwroot\css\pages\request\**" />
+		<Content Remove="wwwroot\css\pages\borrow\**" />
+		<Content Remove="wwwroot\css\pages\home\**" />
+		<Content Remove="wwwroot\css\pages\permission\**" />
+		<Content Remove="wwwroot\css\pages\request\**" />
+		<EmbeddedResource Remove="wwwroot\css\pages\borrow\**" />
+		<EmbeddedResource Remove="wwwroot\css\pages\home\**" />
+		<EmbeddedResource Remove="wwwroot\css\pages\permission\**" />
+		<EmbeddedResource Remove="wwwroot\css\pages\request\**" />
+		<None Remove="wwwroot\css\pages\borrow\**" />
+		<None Remove="wwwroot\css\pages\home\**" />
+		<None Remove="wwwroot\css\pages\permission\**" />
+		<None Remove="wwwroot\css\pages\request\**" />
+		<TypeScriptCompile Remove="wwwroot\css\pages\borrow\**" />
+		<TypeScriptCompile Remove="wwwroot\css\pages\home\**" />
+		<TypeScriptCompile Remove="wwwroot\css\pages\permission\**" />
+		<TypeScriptCompile Remove="wwwroot\css\pages\request\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ServiceWorker Include="wwwroot\service-worker.js" Condition="'$(Configuration)' == 'Release'" PublishedContent="wwwroot\service-worker.published.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Remove="compilerconfig.json" />
+		<Content Remove="wwwroot\ImageUrls.cs" />
+		<None Include="compilerconfig.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="wwwroot\IconUrls.cs" />
+		<Compile Include="wwwroot\ImageUrls.cs" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<!-- Shared -->
