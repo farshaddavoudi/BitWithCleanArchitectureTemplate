@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
 
-namespace Template.Application.Localization.Extensions
+namespace Template.WebUI.API.Extensions
 {
     /// <summary>
     /// To hook into the MVC configuration, we implement the IConfigureOptions_MvcOptions> interface.

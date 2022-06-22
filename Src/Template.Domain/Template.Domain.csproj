@@ -7,6 +7,11 @@
   </PropertyGroup>
 
 	<ItemGroup>
+		
+	</ItemGroup>
+
+
+	<ItemGroup>
     <Compile Remove="Localization\**" />
     <EmbeddedResource Remove="Localization\**" />
     <None Remove="Localization\**" />

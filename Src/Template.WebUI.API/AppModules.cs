@@ -16,7 +16,6 @@ using Swashbuckle.Application;
 using System.IO.Compression;
 using System.Reflection;
 using Template.Application.Common.Contracts;
-using Template.Application.Common.Exceptions;
 using Template.Domain.Options;
 using Template.Domain.Shared;
 using Template.Infrastructure.Identity;

@@ -1,18 +1,71 @@
 <Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseBlazorWebAssembly>true</UseBlazorWebAssembly>
+		<ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.3" PrivateAssets="all" />
-  </ItemGroup>
+	<ItemGroup>
+		<!-- Shared -->
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.3" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.3" PrivateAssets="all" />
+		<PackageReference Include="Bit.Universal.Core" Version="9.0.0" />
+		<PackageReference Include="Bit.Utils" Version="1.0.4" />
+		<PackageReference Include="DNTPersianUtils.Core" Version="5.4.4" />
+		<PackageReference Include="ExcelWizard" Version="1.0.5" />
+		<PackageReference Include="jose-jwt" Version="4.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+		<PackageReference Include="Bit.Universal.AutoMapper" Version="9.0.0" />
+		<PackageReference Include="Bit.Universal.Model" Version="9.0.0" />
+		<PackageReference Include="Humanizer.Core" Version="2.14.1" />
+		<PackageReference Include="System.Net.Http.Json" Version="6.0.0" />
+		<PackageReference Include="NetCore.AutoRegisterDi" Version="2.1.0" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="6.0.3" />
+		<PackageReference Include="ATA.Bit.Shared" Version="6.2.5" />
 
-  <ItemGroup>
-    <Folder Include="ConfigureServices\" />
-  </ItemGroup>
+		<!-- Blazor -->
+		<PackageReference Include="ATA.Broker.SSOSecurity" Version="6.2.5" />
+		<PackageReference Include="Bit.Client.Web.BlazorUI" Version="9.0.0" />
+		<PackageReference Include="Bit.Tooling.Bswup" Version="11.0.0" />
+		<PackageReference Include="Blazor.PersianDatePicker" Version="2.0.2" />
+		<PackageReference Include="BuildWebCompiler" Version="1.12.405" />
+		<PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.6.4">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Radzen.Blazor" Version="3.18.4" />
+		<PackageReference Include="Bit.Tooling.CodeAnalyzer" Version="9.0.0" />
+		<PackageReference Include="System.Net.Http.Json" Version="6.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.4" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.4" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.4" PrivateAssets="all" />
+		<PackageReference Include="Toolbelt.Blazor.LoadingBar" Version="13.1.2" />
+		<PackageReference Include="Telerik.UI.for.Blazor" Version="3.0.0" />
+		<PackageReference Include="System.Net.Http.Json" Version="6.0.0" />
+		<PackageReference Include="Blazored.Modal" Version="6.0.1" />
+		<PackageReference Include="Blazored.Toast" Version="3.2.2" />
+		<PackageReference Include="Blazored.LocalStorage" Version="4.2.0" />
+		<PackageReference Include="MimeTypeMapOfficial" Version="1.0.17" />
+		<PackageReference Include="System.Reactive" Version="5.0.0" />
+		<!--<PackageReference Include="ATA.Broker.SSOSecurity" Version="6.1.1" />-->
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Template.Application\Template.Application.csproj" PrivateAssets="All" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Update="AsyncFixer" Version="1.6.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
 
 </Project>

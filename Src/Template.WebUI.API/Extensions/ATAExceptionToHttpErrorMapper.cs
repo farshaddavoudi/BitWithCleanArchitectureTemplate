@@ -4,7 +4,7 @@ using Bit.Owin.Implementations;
 using Bit.Owin.Metadata;
 using System.Net;
 
-namespace Template.Application.Common.Exceptions
+namespace Template.WebUI.API.Extensions
 {
     public class ATAExceptionToHttpErrorMapper : DefaultExceptionToHttpErrorMapper
     {

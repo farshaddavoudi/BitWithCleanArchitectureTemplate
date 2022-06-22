@@ -7,8 +7,7 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Bit.Server.Owin" Version="9.0.0" />
-		<PackageReference Include="ATA.Bit.Server" Version="6.2.5" />
+		<PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="6.0.3" />
 	</ItemGroup>
 
   <ItemGroup>
@@ -16,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Common\Exceptions\" />
     <Folder Include="Identity\Implementations\" />
   </ItemGroup>
 
