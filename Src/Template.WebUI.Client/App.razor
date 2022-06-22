@@ -1,12 +1,38 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
-    <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
-    </Found>
-    <NotFound>
-        <PageTitle>Not found</PageTitle>
-        <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
-        </LayoutView>
-    </NotFound>
-</Router>
+﻿
+<CascadingBlazoredModal>
+    <CascadingAuthenticationState>
+        <Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
+            <Navigating>
+                <Loading />
+            </Navigating>
+            <Found Context="routeData">
+                <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+
+                    <NotAuthorized>
+                        <Loading />
+                    </NotAuthorized>
+
+                    <Authorizing>
+                        <Loading />
+                    </Authorizing>
+
+                </AuthorizeRouteView>
+            </Found>
+
+            <NotFound>
+                <LayoutView Layout="@typeof(MainLayout)">
+                    <PageNotFound />
+                </LayoutView>
+            </NotFound>
+
+        </Router>
+    </CascadingAuthenticationState>
+</CascadingBlazoredModal>
+
+@code
+{
+    protected override async Task OnInitializedAsync()
+    {
+    //await JsRuntime.InvokeVoidAsync("addSignature");
+    }
+}

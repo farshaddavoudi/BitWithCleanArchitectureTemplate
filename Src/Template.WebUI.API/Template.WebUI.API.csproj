@@ -11,6 +11,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Bit.Tooling.CodeGenerator.Task" Version="9.0.0" PrivateAssets="all" />
+		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.4" />
 		<PackageReference Include="Bit.Server.OData" Version="9.0.0" />
 		<PackageReference Include="Bit.Server.IdentityServer" Version="9.0.0" />
