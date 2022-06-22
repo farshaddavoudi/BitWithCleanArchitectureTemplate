@@ -1,0 +1,49 @@
+﻿@import '_variables.scss';
+@import '_functions.scss';
+@import '_responsive.scss';
+
+// Global Mixins
+
+@mixin removeButtonDefaultStyle {
+    border: none;
+    outline: none;
+    white-space: nowrap;
+    text-decoration: none;
+    font-family: 'aeonik-regular';
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin removeLinkDefaultStyle {
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@mixin border($bcolor: $pinkish-grey) {
+    border: rem(0.5px) solid $bcolor;
+    border-radius: rem(2px);
+    box-sizing: border-box;
+}
+
+@mixin defaultButtonStyle {
+    @include removeButtonDefaultStyle;
+    border-radius: 2px;
+    font-size: rem(14px);
+    font-family: $fontPrimary;
+    height: rem(40px);
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    width: rem(140px);
+}
+

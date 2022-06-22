@@ -1,0 +1,11 @@
+﻿@import '../../utils/_base.scss';
+
+.change-mode-wrapper {
+    display: flex;
+    margin-left: rem(19px);
+    flex-direction: row-reverse;
+
+    > button {
+        width: rem(140px);
+    }
+}

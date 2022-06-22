@@ -1,0 +1,182 @@
+﻿@import '../../utils/_base.scss';
+
+.food-calendar-page {
+
+    .group-form-section {
+        .group-form {
+            margin-bottom: rem(40px);
+        }
+    }
+
+    .grid-section {
+        margin-top: rem(-40px);
+
+        .add-group-button {
+            margin-left: rem(15px);
+            padding-bottom: rem(4px) !important;
+        }
+
+        .grid-action-buttons-wrapper {
+            .rz-button {
+                margin-right: rem(20px);
+                margin-left: rem(7px);
+            }
+        }
+
+        .orders-archive-status-container {
+            display: flex;
+            position: absolute;
+            top: rem(18px);
+            margin-right: rem(30px);
+            z-index: 1;
+
+            @include md {
+                top: rem(22px);
+            }
+
+            @include lt-md {
+                top: rem(-21px);
+            }
+
+            div {
+                margin-left: rem(40px);
+                padding: rem(10px) rem(5px);
+                cursor: pointer;
+                font-size: rem(14px);
+                font-weight: normal;
+                line-height: rem(20px);
+            }
+
+            .active {
+                font-weight: bold;
+                border-bottom: 4px solid $old-brick;
+                border-radius: 1px;
+                color: $old-brick;
+                font-weight: bold;
+            }
+        }
+
+        .deleted-group {
+            background-color: $pale-red;
+
+            &:hover {
+                background-color: $pale-red-hover;
+            }
+        }
+    }
+
+    .food-calendar-section {
+        .page-box-wrapper {
+            position: relative;
+
+            .food-calendar-section-title {
+                position: absolute;
+                top: rem(-21px);
+                right: rem(30px);
+                background: inherit;
+                padding: rem(5px) rem(11px);
+                border: 1px solid lightgray;
+                border-radius: rem(3px);
+                font-weight: bold;
+            }
+
+            .calendar-day {
+                border: 1px solid $light-gray;
+                padding: rem(20px) rem(10px);
+                margin: rem(10px);
+
+                &.holiday {
+                    border: 1px solid $apricot;
+                    background: $placebo-red;
+
+                    .day-date-wrapper > div {
+                        color: $apricot;
+                    }
+                }
+
+                .day-date-wrapper {
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 0 rem(10px);
+                }
+
+                .day-foods-wrapper {
+                    display: flex;
+                    justify-content: space-evenly;
+
+                    .day-food-menu {
+                        flex-grow: 1;
+                        border: 1px solid $light-berry;
+                        flex-grow: 1;
+                        border: 1px dashed #6a679a;
+                        margin: rem(5px);
+                        height: rem(100px);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-top: rem(18px);
+                        padding: 0 rem(5px);
+                        text-align: center;
+                        position: relative;
+                        padding-top: rem(5px);
+
+                        .remove-food-button-wrapper {
+                            position: absolute;
+                            top: rem(4px);
+                            left: rem(3px);
+
+                            img {
+                                width: rem(20px);
+                                cursor: pointer;
+                            }
+                        }
+
+                        .add-food-button-wrapper {
+
+                            img {
+                                width: rem(70px);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.food-save-window-wrapper {
+    padding: rem(30px);
+    background: $white !important;
+    border: rem(15px) solid $white;
+
+    .food-save-buttons-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: rem(44px);
+
+        .default-button {
+            margin-right: rem(20px);
+        }
+    }
+
+    .food-save-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $pinkish-grey;
+        padding-bottom: rem(14px);
+
+        div {
+            font-size: rem(18px);
+            font-weight: bold;
+        }
+    }
+
+    .food-save-window-content {
+        padding-top: rem(40px);
+
+        label {
+            font-size: rem(16px);
+        }
+    }
+}

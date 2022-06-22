@@ -1,0 +1,249 @@
+﻿@import '_base.scss';
+
+/*#region bootstrap utilities*/
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    margin-left: 0.2rem;
+    display: flex;
+    margin-bottom: 0.3rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+/*#endregion*/
+
+/*#region general utilities*/
+
+.full-width {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.z-index-10002 {
+    z-index: 10002 !important;
+}
+
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.space-height-40 {
+    height: 40px;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.align-item-end {
+    align-items: flex-end;
+}
+
+.align-self-end {
+    align-self: flex-end;
+}
+
+.justify-content-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.margin-15 {
+    margin: 15px;
+}
+
+.margin-l-r-15 {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.margin-right-10 {
+    margin-right: 10px;
+}
+
+.margin-right-20 {
+    margin-right: 20px;
+}
+
+.margin-right-30 {
+    margin-right: 30px;
+}
+
+.margin-t-b-15 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.margin-t-b-10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.padding-top-10 {
+    padding-top: 10px;
+}
+
+.padding-top-15 {
+    padding-top: 15px;
+}
+
+.padding-top-30 {
+    padding-top: 30px;
+}
+
+.padding-bottom-15 {
+    padding-bottom: 15px;
+}
+
+.padding-15 {
+    padding: 15px !important;
+}
+
+.padding-20 {
+    padding: 20px !important;
+}
+
+.padding-25 {
+    padding: 25px !important;
+}
+
+.padding-top-bottom-15 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.padding-top-bottom-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.padding-right-left-10 {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.padding-bottom-15 {
+    padding-bottom: 15px;
+}
+
+.margin-10 {
+    margin: 10px;
+}
+
+.margin-t-10 {
+    margin-top: 10px;
+}
+
+.padding-b-10 {
+    padding-bottom: 10px;
+}
+
+.margin-t-b-30 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.margin-top-30 {
+    margin-top: 30px;
+}
+
+.padding-bottom-30 {
+    padding-bottom: 30px;
+}
+
+.margin-buttom-20 {
+    margin-bottom: 20px;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+
+.margin-bottom-15 {
+    margin-bottom: 15px;
+}
+
+.margin-0 {
+    margin: 0 !important;
+}
+
+.padding-0 {
+    padding: 0 !important;
+}
+
+.border-bottom-none {
+    border-bottom: none;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.color-danger {
+    color: $error-red;
+}
+
+.color-success {
+    color: $success-green !important;
+}
+
+.object-fit {
+    object-fit: cover;
+    object-position: top;
+}
+
+
+/*#endregion*/

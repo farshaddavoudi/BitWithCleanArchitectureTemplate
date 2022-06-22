@@ -1,0 +1,36 @@
+﻿// Abstracts
+@import 'abstracts/_variables.scss';
+@import 'abstracts/_responsive.scss';
+@import 'abstracts/_fonts.scss';
+
+// Vendors 
+@import 'vendors/bootstrap/bootstrap-grid.min.css';
+@import 'vendors/alertify/alertify.min.css';
+
+// Utils
+@import 'utils/_helpers.scss';
+@import 'utils/_radzen-custom.scss';
+@import 'utils/_telerik-custom.scss'; 
+@import 'utils/_bit-custom.scss'; 
+@import 'utils/_alertify-custom.scss';
+@import 'utils/_shared.scss';
+
+// Layouts
+@import "layout/_header.scss";
+@import "layout/_sidebar.scss";
+@import "layout/_content.scss";
+
+// Components
+@import 'components/_Confirm.scss';
+@import 'components/_Loading.scss';
+@import 'components/_Toast.scss';
+
+// Pages
+@import 'pages/dashboard/_dashboard-page.scss';
+@import 'pages/dashboard/_flowForm-page.scss';
+@import 'pages/settings/_roles-page.scss';
+@import 'pages/report/_report-statistical-page.scss';
+@import 'pages/report/_personnel-report-page.scss';
+@import 'pages/food/_tbz-food-menu-page.scss';
+@import 'pages/food/_select-food-page.scss';
+@import 'pages/calendar/_food-calendar-page.scss';

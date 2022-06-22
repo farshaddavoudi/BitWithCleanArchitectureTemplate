@@ -1,0 +1,57 @@
+﻿/*#region Aeonik font*/
+
+@font-face {
+    font-family: 'aeonik-bold';
+    src: url("../../fonts/Aeonik-Bold.otf?v=uc2a313ce") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'aeonik-medium';
+    src: url("../../fonts/Aeonik-Medium.otf?v=uc2a313ce") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'aeonik-regular';
+    src: url("../../fonts/Aeonik-regular.otf?v=uc2a313ce") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'aeonik-light';
+    src: url("../../fonts/Aeonik-Light.otf?v=uc2a313ce") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+/*#endregion*/
+
+/*#region IranYekan font*/
+
+@font-face {
+    font-family: 'iranyekan';
+    src: url('../../fonts/Iran-Yekan.eot');
+    src: url('../../fonts/Iran-Yekan.eot?#iefix') format('embedded-opentype'),url('../../fonts/Iran-Yekan.woff') format('woff'),url('../../fonts/Iran-Yekan.ttf') format('truetype'),url('../../fonts/Iran-Yekan.svg#iran_sans') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*#endregion*/
+
+/*#region BHoma font */
+
+@font-face {
+    font-family: 'bhoma';
+    src: url('../../fonts/BHoma.eot');
+    src: url('../../fonts/BHoma.eot?#iefix') format('embedded-opentype'), url('../../fonts/BHoma.woff2') format('woff2'), url('../../fonts/BHoma.woff') format('woff'), url('../../fonts/BHoma.ttf') format('truetype');
+}
+
+/*#endregion */

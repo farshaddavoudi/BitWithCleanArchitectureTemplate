@@ -1,0 +1,95 @@
+﻿@import '../../utils/_base.scss';
+
+.personnel-report-page {
+
+    @include lt-md {
+        padding: 0 rem(15px);
+    }
+
+    .page-header-section {
+        .page-header-wrapper {
+            display: flex;
+
+            @include lt-md {
+                padding: rem(15px);
+                display: flex;
+                flex-direction: column;
+                margin-top: rem(30px);
+                text-align: center;
+            }
+
+            .back-to-select-food-link {
+                color: $old-brick;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .filter-section {
+
+        .filter-box {
+            @include lt-xxl {
+                margin-top: rem(15px);
+            }
+        }
+
+        .food-date-filter {
+            @include lt-md {
+                margin-top: rem(15px);
+            }
+        }
+    }
+
+    .grid-section {
+        .page-grid-wrapper {
+            @include lt-md {
+                margin-top: rem(40px);
+            }
+        }
+
+        .orders-archive-status-container {
+            display: flex;
+            position: absolute;
+            top: rem(18px);
+            margin-right: rem(30px);
+            z-index: 1;
+
+            @include md {
+                top: rem(22px);
+            }
+
+            @include lt-md {
+                top: rem(-21px);
+            }
+
+            div {
+                margin-left: rem(40px);
+                padding: rem(10px) rem(5px);
+                cursor: pointer;
+                font-size: rem(14px);
+                font-weight: normal;
+                line-height: rem(20px);
+            }
+
+            .active {
+                font-weight: bold;
+                border-bottom: 4px solid $old-brick;
+                border-radius: 1px;
+                color: $old-brick;
+                font-weight: bold;
+            }
+        }
+
+        .deleted-order {
+            background-color: $pale-red;
+
+            &:hover {
+                background-color: $pale-red-hover;
+            }
+        }
+    }
+
+    &.my-food-wrapper {
+        padding: rem(110px) rem(40px) rem(40px) rem(40px);
+    }
+}

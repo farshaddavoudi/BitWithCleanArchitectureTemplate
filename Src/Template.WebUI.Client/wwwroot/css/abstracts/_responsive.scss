@@ -1,0 +1,116 @@
+﻿@import '_functions.scss';
+
+/// https://github.com/Necromancerx/media-queries-scss-mixins
+/// https://getbootstrap.com/docs/5.0/layout/breakpoints/
+
+// media aliases and breakpoints
+$screen-sm-min: em(576.2px);
+$screen-md-min: em(768.2px);
+$screen-lg-min: em(992.2px);
+$screen-xl-min: em(1200.2px);
+$screen-xxl-min: em(1400.2px);
+
+$screen-xs-max: em(576px);
+$screen-sm-max: em(768px);
+$screen-md-max: em(992px);
+$screen-lg-max: em(1200px);
+$screen-xl-max: em(1400px);
+    
+// media devices
+@mixin xs {
+    @media screen and (max-width: #{$screen-xs-max}) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max}) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media screen and (min-width: #{$screen-md-min}) and (max-width: #{$screen-md-max}) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media screen and (min-width: #{$screen-lg-min}) and (max-width: #{$screen-lg-max}) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media screen and (min-width: #{$screen-xl-min}) and (max-width: #{$screen-xl-max}) {
+        @content;
+    }
+}
+
+@mixin xxl {
+    @media screen and (min-width: #{$screen-xxl-min}) {
+        @content;
+    }
+}
+
+// media lt queries
+@mixin lt-sm {
+    @media screen and (max-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+@mixin lt-md {
+    @media screen and (max-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+@mixin lt-lg {
+    @media screen and (max-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+@mixin lt-xl {
+    @media screen and (max-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
+
+@mixin lt-xxl {
+    @media screen and (max-width: #{$screen-xxl-min}) {
+        @content;
+    }
+}
+
+// media gt queries
+@mixin gt-xs {
+    @media screen and (min-width: #{$screen-xs-max}) {
+        @content;
+    }
+}
+
+@mixin gt-sm {
+    @media screen and (min-width: #{$screen-sm-max}) {
+        @content;
+    }
+}
+
+@mixin gt-md {
+    @media screen and (min-width: #{$screen-md-max}) {
+        @content;
+    }
+}
+
+@mixin gt-lg {
+    @media screen and (min-width: #{$screen-lg-max}) {
+        @content;
+    }
+}
+
+@mixin gt-xl {
+    @media screen and (min-width: #{$screen-xl-max}) {
+        @content;
+    }
+}

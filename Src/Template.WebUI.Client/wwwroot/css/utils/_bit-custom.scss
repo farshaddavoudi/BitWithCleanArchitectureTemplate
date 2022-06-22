@@ -1,0 +1,46 @@
+﻿@import '_base.scss';
+
+/*#region BitDropDown */
+
+.bit-drp-fluent {
+    font-family: $fontPrimary;
+
+    .bit-drp-wrapper {
+        .bit-drp-wrapper-txt {
+            border: 1px solid $pinkish-grey;
+            height: rem(40px);
+            display: flex;
+            align-items: center;
+        }
+
+        .bit-drp-wrapper-ic {
+            top: rem(5px);
+        }
+    }
+
+    .bit-drp-items-wrapper {
+        .rtl & {
+            left: unset !important;
+            width: rem(460px);
+        }
+
+        .bit-chb-fluent {
+            .bit-chb-txt {
+                .rtl & {
+                    font-family: $fontPrimary;
+                    color: $dark;
+                    margin-right: 0.25rem;
+                }
+            }
+        }
+    }
+}
+
+/*#endregion BitDropDown*/
+
+/*#region BitSpinner */
+
+.bit-spn-fluent > div:first-child {
+    border-top-color: $boulder;
+}
+/*#endregion BitSpinner*/

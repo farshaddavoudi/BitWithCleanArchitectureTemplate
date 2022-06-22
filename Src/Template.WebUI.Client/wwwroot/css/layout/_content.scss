@@ -1,0 +1,158 @@
+﻿@import '../utils/_base.scss';
+
+.rtl {
+    direction: rtl
+}
+
+.main-content-box {
+    background-color: $white-four;
+    padding: rem(110px) rem(40px) rem(80px) rem(150px);
+    min-height: auto;
+    font-family: $fontPrimary;
+
+    .rtl & {
+        padding: rem(100px) rem(140px) rem(80px) rem(30px);
+
+        @include lt-md {
+            padding: rem(42px) 0 0;
+        }
+    }
+
+    .page-header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .page-topbar-wrapper {
+
+        .page-title {
+            font-family: $fontPrimary;
+            font-size: rem(22px);
+            color: $dark;
+        }
+
+        .page-description {
+            color: $bluey-grey-two;
+            font-size: rem(14px);
+            margin-top: rem(13px);
+            margin-bottom: rem(23px);
+        }
+    }
+
+    .page-box-wrapper {
+        background-color: $white;
+        padding: rem(30px);
+        @include border;
+    }
+
+    .page-form-wrapper {
+        button {
+            @include defaultButtonStyle;
+        }
+    }
+
+    .page-grid-wrapper {
+
+        position: relative;
+
+        .k-grid tbody tr:hover .grid-action-buttons-wrapper .grid-action-button {
+            border-radius: 2px;
+            border: 2px solid $bluey-grey;
+        }
+
+        .grid-action-buttons-wrapper {
+            display: flex;
+
+            .grid-action-button {
+                background-color: transparent;
+                border: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: rem(40px);
+                height: rem(40px);
+                cursor: pointer;
+                margin-right: rem(13px);
+
+                img {
+                    width: rem(20px);
+                    height: rem(20px);
+                }
+
+                img.btn-img-hovered {
+                    display: none;
+                }
+
+                &:hover {
+                    &.edit {
+                        background-color: $green;
+                    }
+
+                    &.delete {
+                        background-color: $error-red;
+                    }
+
+                    border: none !important;
+
+                    img.btn-img {
+                        display: none;
+                    }
+
+                    img.btn-img-hovered {
+                        display: flex;
+                    }
+                }
+            }
+        }
+
+        .chip-badge {
+            color: $black;
+            background-color: $dim-white;
+            border: 0.5px solid #AFAFBE;
+            box-sizing: border-box;
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            margin-right: 9px;
+            margin-top: 3px;
+            margin-bottom: 3px;
+        }
+
+        .page-grid-operation-wrapper {
+            display: flex;
+            padding: rem(10px) 0;
+            flex-direction: row-reverse;
+            background: $white-four;
+
+            input {
+                margin-right: auto;
+                width: 30%;
+            }
+
+            button {
+                padding: 0 rem(15px);
+                font-size: rem(16px);
+                font-weight: 500;
+                margin-right: 1px;
+                border: none;
+                border-radius: 2px;
+                width: rem(140px);
+
+                img {
+                    margin-right: 6px;
+                }
+            }
+        }
+    }
+
+    .blazor-datepicker {
+        padding: 0 30px;
+    }
+}
+
+.main-content-box.no-sidebar {
+    padding: 0 !important;
+}

@@ -1,0 +1,84 @@
+﻿@import '../utils/_base.scss';
+
+.toast-component {
+    display: flex;
+    align-items: center;
+    padding: rem(9px) rem(15px);
+    border-radius: 2px;
+
+    &.Success {
+        background-color: $success-notif-bg;
+        border: 1px solid $success-notif-border;
+    }
+
+    &.Error {
+        background-color: $error-notif-bg;
+        border: 1px solid $error-notif-border;
+    }
+
+    &.Message {
+        background-color: $info-notif-bg;
+        border: 1px solid $info-notif-border;
+    }
+
+    &.Notify {
+        background-color: $info-notif-bg;
+        border: 1px solid $info-notif-border;
+    }
+
+    &.Warning {
+        background-color: $warning-notif-bg;
+        border: 1px solid $warning-notif-border;
+    }
+
+    .notif-type-icon-wrapper {
+        margin-left: rem(18px);
+    }
+
+    .notif-message-wrapper {
+        color: $black;
+        margin-left: rem(16px);
+    }
+}
+
+.blazored-toast-container {
+    .blazored-toast-progressbar {
+        height: rem(2px);
+
+        span {
+            height: rem(2px);
+            background-color: #3f9a6f;
+            left: 0;
+        }
+    }
+
+    .Success + .blazored-toast-progressbar {
+        span {
+            background-color: $success-notif-border;
+        }
+    }
+    
+    .Error + .blazored-toast-progressbar {
+        span {
+            background-color: $error-notif-border;
+        }
+    }
+    
+    .Warning + .blazored-toast-progressbar {
+        span {
+            background-color: $warning-notif-border;
+        }
+    }
+    
+    .Notify + .blazored-toast-progressbar {
+        span {
+            background-color: $info-notif-border;
+        }
+    }
+    
+    .Message + .blazored-toast-progressbar {
+        span {
+            background-color: $info-notif-border;
+        }
+    }
+}

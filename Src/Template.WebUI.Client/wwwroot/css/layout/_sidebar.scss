@@ -1,0 +1,190 @@
+﻿@import '../utils/_base.scss';
+
+.main-custom-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.main-custom-menu {
+    background: $white;
+    position: fixed;
+    overflow: scroll;
+    height: 100%;
+    min-width: rem(105px);
+    max-width: rem(105px);
+    z-index: 2;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    border-right: 0.5px solid $light-gray;
+
+    @include lt-md {
+        display: none;
+    }
+
+    .rtl & {
+        border-right: none;
+        border-left: 0.5px solid $light-gray;
+    }
+
+    .nav-item-column {
+        padding-top: rem(90px);
+
+        a {
+            color: $themeMainColor !important;
+            text-decoration: none;
+            cursor: pointer;
+
+            .custom-menu-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: rem(85px);
+                width: 100%;
+                text-align: center;
+                margin-bottom: rem(20px);
+
+                .rtl & {
+                    padding-top: rem(3px);
+                }
+
+                &:hover {
+                    background-color: transparentize($themeMainColor, 0.97);
+                }
+
+                span {
+                    color: $dark;
+                    font-family: $fontPrimaryLight;
+                    font-size: rem(15px);
+
+                    .rtl & {
+                        margin-top: rem(6px);
+                    }
+                }
+
+                img {
+                    width: rem(35px);
+                    height: rem(35px);
+                    margin-bottom: rem(3px);
+                }
+
+                img.active-icon {
+                    display: none;
+                }
+            }
+        }
+
+        a.active {
+            .custom-menu-item {
+                border-left: 5px solid $themeMainColor;
+
+                .rtl & {
+                    border-right: 5px solid $themeMainColor;
+                }
+
+                img.active-icon {
+                    display: flex;
+                }
+
+                img.inactive-icon {
+                    display: none;
+                }
+            }
+        }
+
+        .align-items-center {
+            font-size: xx-large;
+            margin-top: rem(13px);
+        }
+    }
+}
+
+.sub-menu-container {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    left: rem(107px); //ltr
+    width: 100%;
+    z-index: 103;
+    visibility: visible;
+    display: flex;
+
+    .rtl & {
+        left: auto;
+        right: rem(107px);
+    }
+
+    .sub-menu {
+        height: 100%;
+        transition: 0.3s;
+        top: 0;
+        overflow: hidden;
+        font-size: rem(16px);
+        transition-timing-function: ease;
+        background: $white;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: rem(30px) 0;
+        width: rem(330px);
+        z-index: 103;
+        visibility: visible;
+        display: flex;
+        border-right: 0.5px solid #E7E7E7;
+
+        .rtl & {
+            border-right: none;
+            border-left: 0.5px solid #E7E7E7;
+        }
+
+        .sub-menu-items-container {
+            margin-top: rem(86px);
+
+            .nav-links-box {
+                display: flex;
+                flex-direction: column;
+
+                .nav-link {
+                    text-decoration: none;
+                    padding: rem(12px) rem(20px) rem(12px) rem(30px);
+                    display: flex;
+                    color: $dark;
+                    align-items: center;
+                    font-family: $fontPrimary;
+                    font-size: rem(19px);
+
+                    &:hover {
+                        background-color: rgba(64, 61, 125, 0.03);
+                    }
+                }
+
+                .group-title {
+                    padding: rem(12px) rem(20px) rem(12px) rem(20px);
+                    font-size: rem(15px);
+                    color: $bluey-grey;
+                    font-family: $fontPrimary;
+                    cursor: initial;
+                    align-items: center;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .close-submenu-icon {
+            margin-bottom: rem(80px);
+            margin-left: rem(20px);
+            margin-right: rem(20px);
+            cursor: pointer;
+
+            .rtl & {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+
+    .opaque-section {
+        height: 100%;
+        width: 100%;
+        z-index: 103;
+        visibility: visible;
+        display: flex;
+    }
+}

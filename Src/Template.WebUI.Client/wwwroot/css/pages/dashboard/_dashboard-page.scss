@@ -1,0 +1,15 @@
+﻿@import '../../utils/_base.scss';
+
+.dashboard-page {
+
+    .dashboard-grid-operation-wrapper {
+        text-align: end;
+        padding: rem(10px);
+        background-color: $white-four;
+        
+    }
+
+    .k-tabstrip-content, .k-tabstrip > .k-content {
+        border : none;
+    }
+}

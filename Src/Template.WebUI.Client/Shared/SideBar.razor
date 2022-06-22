@@ -1,0 +1,80 @@
+﻿@using System.Collections.ObjectModel
+
+<div class="nav-item-column">
+
+    @foreach (var menuItem in MenuItems)
+    {
+        @if (menuItem.HasAuthorizeView)
+        {
+            if (menuItem.Policies.Any(p => UserClaims.Contains(p)))
+            {
+                <CustomNavLink href="@menuItem.Href" title="@menuItem.Title"
+                               @onclick="@(() => OpenSubMenu(menuItem))"
+                               URLPartToBeActive="@menuItem.URL"
+                               Match="@(menuItem.IsHome ? NavLinkMatch.All : NavLinkMatch.Prefix)">
+                    <div class="custom-menu-item">
+                        <img class="active-icon" src="@menuItem.ActiveIconUrl"/>
+                        <img class="inactive-icon" src="@menuItem.InactiveIconUrl"/>
+                        <span>@menuItem.Title</span>
+                    </div>
+                </CustomNavLink>
+            }
+        }
+        else
+        {
+            <CustomNavLink href="@menuItem.Href" title="@menuItem.Title"
+                   @onclick="@(() => OpenSubMenu(menuItem))"
+                   URLPartToBeActive="@menuItem.URL"
+                   Match="@(menuItem.IsHome ? NavLinkMatch.All : NavLinkMatch.Prefix)">
+                <div class="custom-menu-item">
+                    <img class="active-icon" src="@menuItem.ActiveIconUrl" />
+                    <img class="inactive-icon" src="@menuItem.InactiveIconUrl" />
+                    <span>@menuItem.Title</span>
+                </div>
+            </CustomNavLink>
+        }
+    }
+</div>
+
+@if (IsVisibleSubMenuPanel)
+{
+    <div class="sub-menu-container">
+        <div class="sub-menu">
+            <div class="sub-menu-items-container">
+                <div class="nav-links-box">
+                    @foreach (var subMenuItem in SubMenuItems)
+                    {
+                        if (subMenuItem.HasAuthorizeView)
+                        {
+                            <AuthorizeView Policy="@subMenuItem.Policy">
+                                @if (subMenuItem.IsGroupHeader)
+                                {
+                                    <div class="group-title"> @subMenuItem.Title </div>
+                                }
+                                else
+                                {
+                                    <a href="@subMenuItem.URL" class="nav-link"> @subMenuItem.Title </a>
+                                }
+                            </AuthorizeView>
+                        }
+                        else
+                        {
+                            @if (subMenuItem.IsGroupHeader)
+                            {
+                                <div class="group-title"> @subMenuItem.Title </div>
+                            }
+                            else
+                            {
+                                <a href="@subMenuItem.URL" class="nav-link"> @subMenuItem.Title </a>
+                            }
+                        }
+                    }
+                </div>
+            </div>
+
+            <img src="@IconUrls.CloseMenu" width="20" height="20" class="close-submenu-icon" @onclick="CloseSubMenu" />
+        </div>
+        
+        <div class="opaque-section" @onclick="CloseSubMenu"></div>
+    </div>
+}

@@ -1,0 +1,183 @@
+﻿@import '../../utils/_base.scss';
+
+.flowForm-page {
+
+    .page-box-wrapper, .page-grid-wrapper {
+
+        .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+            margin-top: rem(20px);
+        }
+    }
+
+    .page-box-wrapper {
+        padding: rem(10px) rem(30px) rem(23px) rem(30px);
+        margin-bottom: rem(30px) !important;
+
+        h6 {
+            color: $bluey-grey;
+            font-size: rem(12px);
+            margin-bottom: rem(8px);
+            letter-spacing: rem(2px);
+        }
+
+        p {
+            font-size: rem(22px);
+        }
+    }
+
+    .flow-action-center {
+
+        .section-title {
+            font-weight: bold;
+            font-size: rem(17px);
+            color: $themeMainColor;
+            margin-bottom: rem(13px);
+            letter-spacing: rem(2px);
+            margin-left: rem(5px);
+        }
+
+        .comment-box-wrapper {
+            margin-top: rem(1px);
+
+            textarea {
+                margin: 0 rem(0.75px) rem(20px) 0;
+                padding-right: 0;
+                display: flex;
+                width: 99%;
+                min-height: rem(92px);
+            }
+        }
+
+        .action-buttons-wrapper {
+            button {
+                margin-right: 5px;
+                margin-left: 5px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .history-section {
+        padding: rem(10px);
+        margin-top: rem(6px);
+        padding-left: rem(20px);
+
+        .section-title {
+            font-weight: bold;
+            font-size: rem(17px);
+            color: $themeMainColor;
+            margin-bottom: rem(13px);
+            letter-spacing: rem(2px);
+            margin-left: rem(3px);
+        }
+
+        .page-box-wrapper {
+            padding: 0 rem(20px);
+
+            .seperator-line {
+                height: 0.5px;
+                background-color: $pinkish-grey;
+                margin: 0 rem(-20px);
+            }
+
+            .first-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: rem(20px) 0;
+
+                .actor-name {
+                    font-size: rem(17px);
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        width: rem(18px);
+                        margin-right: rem(7px);
+                    }
+                }
+
+                .action-name {
+                    color: green;
+                    font-weight: bold;
+                    font-size: rem(16px);
+                    font-style: italic;
+                    letter-spacing: 1px;
+                    padding: rem(3px) rem(10px) rem(5px) rem(10px);
+                    border-radius: rem(4px);
+                }
+            }
+
+            .second-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: rem(20px);
+
+                .state-name {
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                    color: $themeMainColor;
+                }
+            }
+
+            .third-row {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                margin-bottom: rem(20px);
+                color: $themeMainColor;
+
+                img {
+                    width: rem(20px);
+                    height: rem(20px);
+                    margin-right: rem(10px);
+                }
+            }
+
+            .todo-section {
+                padding: rem(20px);
+
+                .todo-state-name {
+                    display: flex;
+                    margin-bottom: rem(15px);
+                    font-weight: bold;
+
+                    img {
+                        width: rem(17px);
+                        margin-right: rem(7px);
+                    }
+                }
+
+                .todo-actor-name {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 3px;
+
+                    img {
+                        width: 18px;
+                        margin-right: 7px;
+                    }
+
+                    .todo-user {
+                        letter-spacing: rem(2px);
+                        color: $dark-gray;
+                        font-size: rem(17px);
+                        margin-bottom: rem(5px);
+                        margin-top: rem(3px);
+                    }
+                }
+            }
+        }
+    }
+
+    .k-tabstrip-top > .k-tabstrip-items {
+        border: none;
+    }
+
+    .k-tabstrip > .k-content.k-state-active {
+        background-color: $white-four;
+        border: none;
+        overflow: hidden;
+    }
+}

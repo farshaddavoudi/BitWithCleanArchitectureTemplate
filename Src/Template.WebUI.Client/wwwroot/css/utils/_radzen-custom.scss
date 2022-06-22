@@ -1,0 +1,264 @@
+﻿@import '_base.scss';
+
+/*#region SelectBar */
+
+.form-selectbar {
+    display: block;
+
+    .rz-button {
+        text-align: center;
+        width: 30%;
+
+        .rz-button-text {
+            line-height: 2rem !important;
+        }
+    }
+}
+
+.form-dropdown {
+    width: 100% !important;
+    font-size: 1rem;
+
+    .rz-dropdown-label {
+        line-height: 1.68rem !important;
+    }
+}
+
+//  SelectButton
+.rz-selectbutton {
+    display: flex;
+    width: 100%;
+
+    .rz-button {
+        width: 50%;
+        height: rem(41px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .rz-state-active {
+        background-color: $old-brick !important;
+        border-color: $old-brick !important;
+    }
+}
+
+
+/*#endregion */
+
+/*#region DropDown */
+
+.rz-dropdown {
+    display: flex;
+    height: 40px;
+    font-size: .875rem;
+    font-weight: 400;
+    color: #605e5c;
+    position: relative;
+    margin: 0;
+    padding: 0 1.75rem 0 .5rem;
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 35px;
+    outline: none;
+    border: 1px solid $border-color;
+    border-radius: .125rem;
+
+    &:hover {
+        background-color: $pale-white;
+        cursor: pointer;
+    }
+
+    .rtl & {
+        padding: 0 0.5rem 0 1.75rem;
+    }
+
+    .rz-dropdown-label.rz-inputtext {
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    .rz-multiselect-trigger, .rz-dropdown-trigger {
+        .rtl & {
+            left: rem(7px);
+            right: unset;
+        }
+    }
+
+    .rz-dropdown-clear-icon {
+        .rtl & {
+            right: unset;
+            left: 1.6875rem;
+        }
+    }
+
+    .rz-dropdown-trigger-icon {
+        background-image: url(/icons/arrow_down.svg);
+        background-repeat: no-repeat;
+        color: transparent;
+        top: rem(13px);
+        margin-top: rem(10px);
+    }
+}
+
+.rz-clear .rz-multiselect-label-container, .rz-clear .rz-dropdown-label {
+    font-size: rem(15px);
+
+    .rtl & {
+        padding-left: 2.375rem;
+        padding-right: rem(7px);
+    }
+}
+
+.rz-dropdown-items-wrapper {
+    .rz-dropdown-items {
+        .rz-dropdown-item {
+            display: flex;
+            height: rem(30px);
+            align-items: center;
+            font-family: $fontPrimary;
+        }
+    }
+}
+
+.rz-dropdown-item.rz-state-highlight {
+    background-color: $themeMainColor !important;
+}
+
+.rz-dropdown-filter-container {
+    .rz-dropdown-filter-icon {
+        margin-top: rem(3px);
+        margin-right: rem(3px);
+
+        .rtl & {
+            margin-top: rem(4px);
+            margin-left: rem(5px);
+            margin-right: unset;
+        }
+    }
+}
+
+.rz-listbox-filter-container .rzi-search,
+.rz-dropdown-filter-container .rzi-search,
+.rz-multiselect-filter-container .rzi-search {
+    margin-top: rem(3px);
+    margin-left: rem(3px);
+
+    .rtl & {
+        margin-top: rem(4px);
+        margin-right: rem(5px);
+        margin-left: unset;
+    }
+}
+
+.rz-listbox-filter-container .rz-inputtext,
+.rz-dropdown-filter-container .rz-inputtext,
+.rz-multiselect-filter-container .rz-inputtext {
+    padding-left: rem(5px);
+
+    .rtl & {
+        padding-left: unset;
+        padding-right: rem(5px);
+    }
+}
+
+/*#endregion */
+
+/*#region CheckboxList */
+.rz-chkbox-box.rz-state-active {
+    background-color: $themeMainColor;
+}
+
+.rz-chkbox-box.rz-state-active.rz-state-disabled {
+    opacity: 0.5 !important;
+}
+
+.rz-chkbox {
+    margin-right: rem(5px);
+
+    .rtl & {
+        margin-right: unset;
+        margin-left: rem(5px);
+    }
+}
+
+.rz-checkbox-list-horizontal {
+    .rz-chkbox {
+        margin-right: rem(5px);
+        margin-left: 0;
+    }
+}
+
+.rz-chkbox-label {
+    cursor: pointer;
+
+    .rtl & {
+        margin: 0 rem(6px) 0 0;
+    }
+}
+/*#endregion */
+
+/*#region Scroll */
+
+body:not(.rz-default-scrollbars) ::-webkit-scrollbar-thumb {
+    background-color: $light-gray;
+    border: 6px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: rem(8px);
+}
+
+body[dir=rtl]:not(.rz-default-scrollbars)::-webkit-scrollbar {
+    display: none;
+}
+
+/*#endregion */
+
+/*#region Button */
+
+.rz-button {
+    font-family: $fontPrimary;
+
+    .rtl & {
+        padding-bottom: 5px
+    }
+}
+
+/*#endregion */
+
+/*#region Switch */
+
+.rz-switch.rz-switch-checked .rz-switch-circle {
+    background: $themeMainColor;
+}
+/*#endregion */
+
+/*#region rating */
+
+.rz-rating .rzi-star {
+    color: $mimolette-orange;
+}
+
+.rz-rating .rzi-star-o {
+    opacity: unset;
+}
+
+.rzi-ban {
+    display: none;
+}
+
+/*#endregion */
+
+/*#region Selectbar */
+
+.rz-button.rz-state-disabled {
+    opacity : 0.5;
+}
+
+.rz-selectbutton .rz-state-active {
+    opacity: unset !important;
+}
+
+/*#endregion */

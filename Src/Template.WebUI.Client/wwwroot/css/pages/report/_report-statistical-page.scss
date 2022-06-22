@@ -1,0 +1,74 @@
+﻿@import '../../utils/_base.scss';
+
+.report-statistical-page {
+
+    .container-table100 {
+        margin: 0 auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 33px 100px;
+
+        .wrap-table100 {
+            width: 100%;
+
+            .table100 {
+                width: 100%;
+                position: relative;
+                background-color: #fff;
+
+                .table100-firstcol {
+                    background-color: #fff;
+                    position: absolute;
+                    z-index: 1000;
+                    width: 310px;
+                    top: 0;
+                    left: 0;
+
+                    table {
+                        background-color: transparent;
+
+                        tr {
+                            border-bottom: 1px solid #f2f2f2;
+
+                            th {
+                                font-family: $fontPrimary;
+                                font-size: 14px;
+                                color: #333;
+                                line-height: 1.4;
+                                text-transform: uppercase;
+                                padding-top: 21px;
+                                padding-bottom: 21px;
+                                text-align: left;
+                            }
+
+                            td {
+                                color: #666;
+                                font-family: $fontPrimary;
+                                font-size: 15px;
+                                line-height: 1.4;
+                                padding-top: 16px;
+                                padding-bottom: 16px;
+                            }
+
+                            .column1 {
+                                width: 100%;
+                                padding-left: 40px;
+                            }
+
+                            th, td {
+                                font-weight: unset;
+                                padding-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

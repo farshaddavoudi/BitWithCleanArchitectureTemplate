@@ -1,0 +1,21 @@
+﻿@import '_base.scss';
+
+.alertify-notifier {
+    border: 0;
+    font-family: $fontPrimary;
+
+    &.ajs-center {
+        left: 62.5%;
+    }
+
+    .ajs-message {
+        background-color: $themeMainColor;
+        color: $white;
+        text-shadow: -0.5px -0.5px 0 #232e3c;
+    }
+}
+
+.validation-message {
+    margin-top: rem(5px);
+    color: $error-red;
+}

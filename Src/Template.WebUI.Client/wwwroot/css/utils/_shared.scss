@@ -1,0 +1,367 @@
+﻿// Common elements styles like forms / buttons / etc
+
+@import '_base.scss';
+
+* {
+    font-family: $fontPrimary;
+
+    @include md {
+        font-size: rem(14px);
+    }
+}
+//-------------------------------------------
+//  input
+//-------------------------------------------
+input {
+    width: 100%;
+    height: rem(40px);
+    padding-left: inherit;
+    border: 1px solid $pinkish-grey;
+    font-size: rem(16px);
+    font-family: $fontPrimary;
+    color: $dark;
+    display: flex;
+}
+
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $dim-gray !important;
+}
+
+input.invalid {
+    border: 0.5px solid $error-red;
+}
+//-------------------------------------------
+//  label
+//-------------------------------------------
+label, .input-label {
+    color: $dark;
+    font-size: rem(14px);
+    font-weight: 400;
+    margin: 0px 0px rem(7px) 0;
+    display: flex;
+}
+//-------------------------------------------
+//  Button
+//-------------------------------------------
+button {
+    height: 40px !important;
+}
+
+.primary-button {
+    @include defaultButtonStyle;
+    background-color: $old-brick !important; //Important for Radzen buttons style conflicts
+    color: $white;
+    justify-content: center;
+
+    .rtl & {
+        padding-bottom: rem(5px);
+    }
+
+    &:hover {
+        background-color: $thunderbird !important;
+        border-color: $thunderbird !important;
+        color: $white;
+    }
+
+    &:focus {
+        background-color: $thunderbird !important;
+    }
+
+    &:disabled {
+        background: $dirty-pink !important;
+        border-radius: rem(2px);
+        color: $white;
+        font-weight: 500;
+        font-size: rem(14px);
+        line-height: rem(20px);
+        padding: rem(10px) rem(20px);
+    }
+}
+
+.secondary-button {
+    @include defaultButtonStyle;
+    background-color: $light-sunset-pearl !important; //Important for Radzen buttons style conflicts
+    color: $jacko-bean;
+
+    &:hover {
+        border: 1px solid $jacko-bean;
+        background-color: $sunset-pearl !important;
+    }
+
+    &:focus {
+        background-color: $sunset-pearl !important;
+        border: 1px solid $jacko-bean;
+    }
+
+    &:disabled {
+        color: $arsenic;
+        background-color: $pinkish-grey !important;
+    }
+}
+
+.success-button {
+    @include defaultButtonStyle;
+    background-color: $success-green !important;
+    color: $white;
+    display: inline-block;
+
+    &:disabled {
+        background-color: transparentize($success-green, 0.6);
+    }
+
+    &:hover {
+        background-color: $success-green !important;
+        color: $white;
+    }
+}
+
+.danger-button {
+    @include defaultButtonStyle;
+    background-color: $error-red !important;
+    color: $white !important;
+    display: inline-block;
+
+    &:disabled {
+        background-color: transparentize( $error-red, 0.6) !important;
+    }
+
+    &:hover {
+        background-color: $error-red !important;
+        color: $white;
+    }
+}
+
+.warning-button {
+    @include defaultButtonStyle;
+    background-color: $mimolette-orange !important;
+    color: $white !important;
+    border: solid 1px $mimolette-orange;
+    display: inline-block;
+    line-height: 0;
+
+    .rtl & {
+        padding-bottom: rem(3px);
+    }
+
+    &:disabled {
+        background-color: transparentize($light-sunset-pearl, 0.6) !important;
+    }
+
+    &:hover {
+        background-color: $sunset-pearl !important;
+        border-color: $sunset-pearl !important;
+        color: $white;
+    }
+}
+
+.default-button {
+    @include defaultButtonStyle;
+    background-color: $white;
+    color: $arsenic;
+    border: solid 1px $arsenic;
+    display: inline-block;
+    line-height: 0;
+
+    .rtl & {
+        padding-bottom: rem(3px);
+    }
+
+    &:disabled {
+        background-color: transparentize($arsenic, 0.6) !important;
+    }
+
+    &:hover {
+        background-color: $white !important;
+        color: $arsenic;
+    }
+}
+
+.dark-button {
+    @include defaultButtonStyle;
+    background-color: $arsenic !important;
+    color: $white !important;
+    border: solid 1px $arsenic;
+    display: inline-block;
+    line-height: 0;
+
+    .rtl & {
+        padding-bottom: rem(3px);
+    }
+
+    &:disabled {
+        background-color: transparentize($pinkish-grey, 0.6) !important;
+    }
+
+    &:hover {
+        background-color: $boulder !important;
+        border-color: $boulder !important;
+        color: $white;
+    }
+}
+//-------------------------------------------
+//  p
+//-------------------------------------------
+p {
+    margin: 0 !important;
+}
+//-------------------------------------------
+//  h
+//-------------------------------------------
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+/*#region Badge*/
+
+.badge {
+    border-radius: 50%;
+    width: rem(28px);
+    height: rem(28px);
+    background: $pinkish-grey;
+    color: $arsenic;
+    border: 2px solid $white;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: rem(2.5px) rem(5px) 0;
+    padding: 0 0 rem(0.3px) rem(0.5px);
+}
+
+/*#endregion*/
+
+/*#region Page AddOrEdit Header*/
+
+.page-add-edit-header {
+    display: flex;
+    flex-direction: column;
+
+    .page-back-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: rem(20px);
+
+        img {
+            cursor: pointer;
+            width: rem(16px);
+            height: rem(12px);
+            margin-right: rem(20px);
+
+            .rtl & {
+                margin-left: rem(10px);
+                transform: rotateY(180deg);
+                margin-top: rem(3px);
+            }
+        }
+
+        .back-title-text {
+            font-size: rem(22px);
+            font-weight: 500;
+            color: $dark;
+        }
+    }
+
+    .page-back-links {
+        display: flex;
+        font-size: 14px;
+        align-items: center;
+        margin-bottom: 16px;
+        color: $bluey-grey;
+
+        img {
+            .rtl & {
+                transform: rotateY(180deg);
+            }
+        }
+
+        * {
+            margin-right: rem(12px);
+        }
+
+        .active-link {
+            color: $dark;
+        }
+    }
+}
+/*#endregion*/
+/*#region Form*/
+
+.form-custom-wrapper {
+    background-color: $white;
+    padding: 0;
+    @include border;
+
+    .form-section {
+        border-bottom: 1px solid $pale-white;
+        padding: rem(30px);
+
+        .form-section-title {
+            color: $bluey-grey;
+            width: 11%;
+        }
+
+        .form-item-wrapper {
+            padding: rem(10px) rem(15px);
+
+            .form-input-wrapper {
+                padding: 0 rem(20px) 0 0;
+
+                .rtl & {
+                    padding: 0 0 0 rem(20px);
+                }
+
+                input {
+                    padding: 0 rem(10px);
+                }
+            }
+        }
+    }
+}
+/*#endregion*/
+/*#region Blazored Toast*/
+
+.blazored-toast-container {
+    z-index: 2000;
+    font-family: $fontPrimary;
+
+    .blazored-toast-header {
+        .blazored-toast-close {
+            .blazored-toast-close-icon {
+                cursor: pointer;
+            }
+        }
+    }
+}
+/*#endregion*/
+/*#region BlazorPersianDatePicker */
+
+.datepicker_wrapp {
+    input.blazor-datepicker {
+        border: 1px solid $pinkish-grey;
+        padding-bottom: rem(3px);
+        height: rem(35px);
+        border-radius: 0;
+        color: $dark;
+        font-size: 0.875rem;
+    }
+
+    .clear-btn {
+        top: rem(-7px);
+    }
+}
+/*#endregion */
+
+/*#region Today Label */
+
+.today-tag {
+    background-color: $wewak;
+    color: $thunderbird;
+    padding: rem(2px) rem(8px);
+    border-radius: rem(8px);
+    font-size: rem(12px);
+    font-weight: 600;
+    font-size: rem(12px);
+    line-height: rem(20px);
+}
+
+/*#endregion */

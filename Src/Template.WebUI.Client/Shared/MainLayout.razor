@@ -1,17 +1,68 @@
-﻿@inherits LayoutComponentBase
+﻿
+@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+<AuthorizeView>
+    <Authorized>
+        
+        <BlazoredToasts ShowProgressBar="true" Timeout="@AppConstants.AlertDefaultTimeout" Position="ToastPosition.BottomRight" />
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
+        <TelerikRootComponent>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+            <div>
+                
+                <div class="col-12">
+                    <div class="main-header-box">
+                        <Header></Header>
+                    </div>
+                </div>
+    
+                @if (_showMenu)
+                {
+                    <div class="main-custom-menu">
+                        <SideBar/>
+                    </div>
+                }
+
+                <div class="main-content-box @(_showMenu ? "" : "no-sidebar")">
+                    @Body
+                </div>
+
+            </div>
+  
+        </TelerikRootComponent>
+
+    </Authorized>
+    
+    <Authorizing>
+        <Loading />
+    </Authorizing>
+
+    <NotAuthorized>
+        <Loading />
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+
+    bool _showMenu;
+
+    [CascadingParameter] private Task<AuthenticationState> AuthenticationStateTask { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateTask;
+
+        if (authState.User.Identity is null)
+            return;
+
+        if (authState.User.Identity.IsAuthenticated)
+        {
+            var userRoles = await AuthenticationStateTask.GetUserRoles();
+
+            _showMenu = userRoles.Count > 0;
+        }
+
+        await base.OnInitializedAsync();
+    }
+
+}

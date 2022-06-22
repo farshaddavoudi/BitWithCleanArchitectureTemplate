@@ -1,0 +1,152 @@
+﻿@inherits BitPageBase
+
+<div class="header-logo-wrapper">
+    <NavLink href="@PageUrls.SelectFoodPage" title="انتخاب غذا">
+        <img class="ATA-logo" src="@ImageUrls.Layout.LogoHeaderWhite" />
+    </NavLink>
+    
+    <div class="full-logo">
+        <img src="@ImageUrls.Layout.AtaAirlinesLogoWhite" />
+    </div>
+</div>
+
+<div class="header-site-name-wrapper">
+    @AppMetadata.PersianFullName
+</div>
+
+
+<div class="header-profile-wrapper">
+    <div class="operation notif-wrapper">
+        <img class="notification" src="@ImageUrls.Layout.NotificationsWhite" @onclick="OpenNotificationWindow" />
+        <span class="notification-sign"></span>
+    </div>
+
+    <div class="operation">
+        @{
+            <img class="user" src="@AvatarPicUrl" @onerror="OnUserImageLoadFailed" @onclick="OpenProfileWindow" />
+        }
+        <div class="online-sign">
+            <div></div>
+        </div>
+    </div>
+</div>
+
+<TelerikWindow Class="window-custom-wrapper" Visible="@IsOpenProfileWindow">
+    <WindowContent>
+        <div class="avatar-window">
+
+            <img class="close-button" src="@IconUrls.CloseCircle" @onclick="() => IsOpenProfileWindow = false" />
+
+            <div class="profile-box">
+                <div class="user-box">
+
+                    <div class="user-image">
+                        @{
+                            <img src="@AvatarPicUrlInProfileModal" width="100" height="100" />
+                        }
+                    </div>
+
+                    <div class="user-profile">
+                        <div class="user-name">
+                            @User.FullName
+                        </div>
+                        <div class="user-name user-info">
+                            @User.PersonnelCode
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-info-container">
+                    
+                    <div class="user-unit-wrapper">
+                        <div class="user-unit"> @User.UnitName </div>
+                        <div class="user-division"> @User.UnitDivisionName </div>
+                    </div>
+
+                    <div class="user-info-wrapper">
+                        <div class="user-info-lable"> تاریخ استخدام </div>
+                        <div class="user-info-title">@User.EmploymentDateJalali</div>
+                    </div>
+
+                    <div class="user-info-wrapper">
+                        <div class="user-info-lable"> سمت سازمانی </div>
+                        <div class="user-info-title">@User.PostTitle</div>
+                    </div>
+
+                    <div class="user-info-wrapper">
+                        <div class="user-info-lable"> محل خدمت </div>
+                        <div class="user-info-title">@User.WorkLocation</div>
+                    </div>
+                    
+                    <div>
+                        <button class="default-button logout-button" @onclick="Logout"> خروج </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </WindowContent>
+</TelerikWindow>
+
+<TelerikWindow Class="window-custom-wrapper" Visible="@IsOpenNotificationWindow">
+    <WindowContent>
+        <div class="notification-window">
+            <img class="close-button" src="@IconUrls.CloseCircle" @onclick="() => IsOpenNotificationWindow = false" />
+            @{
+                if (User.IsMale)
+                {
+                    <img class="margin-t-b-15" src="/images/layout/user-blue.png" />
+                }
+                else
+                {
+                    <img class="margin-t-b-15" src="/images/layout/user-blue.png" />
+                }
+            }
+            <div class="margin-buttom-20">
+                You have no new notifications!
+                <br>
+                Check back later.
+            </div>
+        </div>
+    </WindowContent>
+</TelerikWindow>
+
+<TelerikWindow Class="popup-window-custom-wrapper" Width="100%" Height="100%" Centered="true" Visible="@(VersionChangeList.Count > 0 && IsOpenAppVersioningWindow)">
+    <WindowContent>
+
+        <div class="popup-window-content versioning-window">
+            <div class="app-versioning-container">
+                <div class="col-4 popup-window-content-card">
+                    @{
+                        <div>
+                            @foreach (var change in VersionChangeList)
+                            {
+                                <h4 class="version-no-title"> بروزرسانی @change.Date?.EnglishToPersianDigits() به نسخه @change.Version.EnglishToPersianDigits() </h4>
+
+                                <ul class="list-changes">
+                                    @foreach (var c in change.Changes)
+                                    {
+                                        <li>
+                                            <h6 class="change-title">@c.Title</h6>
+
+                                            <ul class="list-descriptions">
+                                                @foreach (var d in c.Description)
+                                                {
+                                                    <li class="change-description">@d</li>
+                                                }
+                                            </ul>
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        </div>
+                    }
+                </div>
+            
+                <button class="primary-button close-versioning-modal-button" @onclick="CloseVersioningWindow"> متوجه شدم </button>
+            </div>
+        </div>
+
+    </WindowContent>
+</TelerikWindow>

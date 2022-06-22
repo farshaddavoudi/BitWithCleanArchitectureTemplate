@@ -1,0 +1,541 @@
+﻿@import '../utils/_base.scss';
+
+.main-header-box {
+    align-items: center;
+    display: flex;
+    // background-color: $themeMainColor;
+    background: url(/images/layout/ata-header-bg.jpg);
+    height: rem(70px);
+    width: 100%;
+    position: fixed;
+    z-index: 104;
+    justify-content: space-between;
+
+    .header-logo-wrapper {
+        display: flex;
+
+        .ATA-logo {
+            width: rem(50px);
+            margin-left: rem(30px);
+
+            .rtl & {
+                margin-right: rem(30px);
+            }
+        }
+
+        .full-logo {
+            display: flex;
+            align-items: center;
+            font-size: rem(20px);
+            color: $white;
+            font-family: $fontPrimary;
+
+            img {
+                height: rem(44px);
+                width: rem(146px);
+
+                @include sm {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .header-site-name-wrapper {
+        color: white;
+        font-family: $fontBHoma;
+        font-size: rem(26px);
+        margin-bottom: rem(5px);
+        letter-spacing: 0.5px;
+
+        @include lt-xl {
+            font-size: rem(25px);
+        }
+
+        @include lt-md {
+            font-size: rem(24px);
+            margin-left: 13%;
+        }
+
+        @include xs {
+            display: none;
+        }
+    }
+
+    .generic-search-wrapper {
+        position: relative;
+        width: rem(400px);
+
+        .generic-search-textbox {
+            width: rem(400px);
+            height: rem(40px);
+            border-radius: 4px;
+            background: $themeLightColor;
+
+            input {
+                color: white;
+                font-family: $fontPrimary;
+
+                &::-webkit-input-placeholder { /* Edge */
+                    color: $dim-white !important;
+                }
+
+                &:-ms-input-placeholder { /* Internet Explorer */
+                    color: $dim-white !important;
+                }
+
+                &:-moz-placeholder {
+                    color: $dim-white !important;
+                }
+
+                &::placeholder {
+                    color: $dim-white !important;
+                }
+            }
+        }
+
+        img {
+            position: absolute;
+            width: 18px;
+            height: 100%;
+            z-index: 1;
+            right: 12px;
+        }
+    }
+
+    .header-profile-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-right: rem(-40px);
+
+        .operation {
+
+            &.notif-wrapper {
+
+                .rtl & {
+                    margin-left: rem(15px);
+                }
+
+                @include lt-md {
+                    display: none;
+                }
+            }
+
+            .user {
+                width: rem(50px);
+                height: rem(50px);
+                border-radius: 50%;
+                overflow: hidden;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.74;
+                }
+            }
+
+            .online-sign {
+                position: absolute;
+                border-radius: 50%;
+                right: rem(3px);
+                bottom: rem(2px);
+                padding: rem(3px);
+                background-color: #84011c; // $themeMainColor;
+            }
+
+            div {
+                width: rem(13px);
+                height: rem(13px);
+                border-radius: 50%;
+                background: $success-green;
+            }
+
+            .notification {
+                width: 3rem;
+                height: 2rem;
+                margin-top: rem(10px);
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.74;
+                }
+            }
+
+            .notification-sign {
+                position: absolute;
+                width: rem(10px);
+                height: rem(11px);
+                border-radius: 50%;
+                background: $error-red;
+                border: 1px solid #ffffff;
+                margin: rem(14px) 0px 0px rem(-24px);
+
+                .rtl & {
+                    margin: 0.875rem -21px 0px -1.5rem;
+                }
+            }
+        }
+
+        & > div ~ div {
+            margin-left: rem(30px);
+            position: relative;
+        }
+    }
+}
+
+.avatar-window {
+    right: rem(45px);
+    top: rem(90px);
+    width: rem(380px);
+    left: unset;
+    font-family: $fontPrimary;
+    position: fixed;
+    transform: unset;
+    border: 1px solid $pinkish-grey;
+    background-color: $white;
+    padding: rem(15px);
+    display: flex;
+    flex-direction: column;
+
+    .rtl & {
+        left: 45px;
+        right: unset;
+    }
+
+    @include lt-md {
+        width: 90%;
+        left: 2.5% !important;
+    }
+
+    @include lt-sm {
+        width: 87%;
+        left: 3% !important;
+    }
+
+    .profile-box {
+        .user-box {
+            display: flex;
+            flex-direction: row;
+            margin: 0 rem(15px);
+            padding-bottom: rem(20px);
+            margin-bottom: rem(15px);
+
+            .user-image {
+                margin-right: rem(10px);
+
+                img {
+                    width: rem(80px);
+                    height: rem(80px);
+                    border-radius: 50%;
+                    border: 1px solid $pinkish-grey;
+                }
+            }
+
+            .user-profile {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-left: rem(5px);
+
+                .rtl & {
+                    margin-right: rem(10px);
+                }
+
+                .user-name {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    color: $dark;
+                    font-size: rem(17px);
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    margin-bottom: rem(8px);
+                    margin-left: 0;
+                }
+
+                .user-info {
+                    font-weight: normal;
+                    font-size: rem(16px);
+                }
+            }
+
+            .change-account-box {
+                border: 1px solid $pinkish-grey;
+                margin-top: rem(10px);
+                padding: rem(20px);
+                display: flex;
+
+                input {
+                    width: 50%;
+                    height: rem(40px);
+                }
+            }
+        }
+
+        .user-info-container {
+
+            .user-unit-wrapper {
+                margin-bottom: rem(24px);
+                text-align: center;
+                font-size: rem(16px);
+                letter-spacing: 0.35px;
+                line-height: rem(26px);
+                margin-right: rem(15px);
+                margin-left: rem(15px);
+                border-top: 1px solid $light-gray;
+                margin-top: rem(-10px);
+                padding-top: rem(20px);
+                border-bottom: 1px solid $light-gray;
+                padding-bottom: rem(20px);
+
+                .user-unit {
+                    font-size: rem(18px);
+                    margin-bottom: rem(3px);
+                }
+            }
+
+
+
+            .user-info-wrapper {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+                margin-bottom: 17px;
+                margin-right: 7%;
+                margin-left: 7%;
+
+                .user-info-label {
+                    letter-spacing: 0.5px;
+                    min-width: 125px;
+                }
+
+                .user-info-title {
+                    font-weight: bold;
+                    letter-spacing: 0.7px;
+                }
+            }
+
+            .logout-button {
+                margin-top: rem(15px);
+                width: 100% !important;
+                padding-bottom: rem(7px);
+                margin-bottom: rem(3px);
+
+                &:hover {
+                    background-color: $old-brick !important;
+                    color: $white;
+                }
+            }
+        }
+
+        .change-account {
+            margin-left: rem(25px);
+            margin-bottom: rem(15px);
+
+            .k-textbox {
+                margin-top: rem(15px);
+                margin-bottom: rem(20px);
+            }
+
+            i {
+                width: rem(65px);
+            }
+        }
+
+        .tips {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: $dim-gray;
+        }
+    }
+
+    .close-button {
+        cursor: pointer;
+        align-self: flex-end;
+    }
+}
+
+.notification-window {
+    width: rem(300px);
+    right: rem(120px);
+    top: rem(90px);
+    left: unset;
+    font-family: $fontPrimary;
+    position: fixed;
+    transform: unset;
+    border: 1px solid $pinkish-grey;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    padding: rem(15px);
+    text-align: center;
+
+    .rtl & {
+        left: 200px;
+        right: unset;
+    }
+
+    .close-button {
+        cursor: pointer;
+        align-self: flex-end;
+    }
+}
+
+.versioning-window {
+    font-family: $fontPrimary;
+
+    @include lt-md {
+        background: none;
+    }
+
+    .app-versioning-container {
+        display: flex;
+        flex-direction: column;
+        background: $white;
+
+        .popup-window-content-card {
+            min-height: rem(160px);
+            max-height: 80vh;
+            overflow: scroll;
+            padding: rem(10px) rem(15px) 0 rem(23px);
+            font-family: $fontPrimaryLight;
+            width: rem(450px);
+            justify-content: space-between;
+            overflow-x: hidden;
+
+            @include lt-sm {
+                width: 100% !important;
+                padding: 0;
+            }
+        }
+
+        .version-modal-title {
+            font-size: rem(20px);
+            margin-bottom: rem(15px);
+        }
+
+        .version-no-title {
+            font-family: $fontPrimaryLight;
+            font-size: rem(15px);
+            margin-right: 1rem;
+            color: orange;
+            font-weight: normal;
+            letter-spacing: 1px;
+            margin-top: rem(15px);
+            margin-bottom: rem(-7px);
+        }
+
+        .version-publish-date {
+            font-size: rem(13px);
+        }
+
+        .list-changes {
+            list-style-type: disc;
+
+            li::marker {
+                color: orange;
+                font-size: 1.5em;
+            }
+        }
+
+        .list-changes > li {
+            margin-bottom: 10px !important;
+        }
+
+        .change-title {
+            font-family: $fontPrimaryLight;
+            font-weight: normal;
+            font-size: rem(15px);
+            line-height: rem(23px);
+            letter-spacing: 0;
+            margin-right: rem(-7px);
+            margin-left: rem(-7px);
+            margin-bottom: rem(-4px);
+        }
+
+        .list-descriptions {
+            list-style-type: square;
+        }
+
+        .change-description {
+            font-size: rem(14px);
+            padding-top: rem(2px);
+        }
+
+        .close-versioning-modal-button {
+            padding: rem(20px);
+            margin: rem(18px) rem(22px);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            background-color: $light-green !important;
+            border-radius: 5px;
+            padding-bottom: 24px;
+            width: auto;
+        }
+    }
+}
+
+.top-bar-add-edit {
+    display: flex;
+    justify-content: flex-start;
+    background: $white;
+    position: fixed;
+    z-index: 105;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid $light-gray !important;
+
+    .logo-box {
+        border-right: 1px solid $light-gray;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        width: 105px;
+
+        img {
+            width: rem(45px);
+            margin-right: rem(34px);
+        }
+    }
+
+    .site-name-header {
+        color: $dark-four;
+        margin-right: rem(35px);
+        width: 15%;
+    }
+
+    .add-edit-topbar-right-side {
+        display: flex;
+        align-items: center;
+        width: 86%;
+
+        .col-xl-5 {
+            display: flex;
+            justify-content: end;
+
+            .center-logo {
+                height: rem(50px);
+            }
+        }
+
+        .action-buttons {
+            text-align: right;
+            justify-content: flex-end;
+            width: 57.4%;
+
+            .rtl & {
+                text-align: left;
+            }
+
+            * {
+                margin-left: rem(13px);
+
+                .rtl & {
+                    line-height: unset;
+                }
+            }
+        }
+    }
+}
