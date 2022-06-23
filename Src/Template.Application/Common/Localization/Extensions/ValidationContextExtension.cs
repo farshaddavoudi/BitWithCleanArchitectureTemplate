@@ -1,8 +1,8 @@
-﻿using Bit.Core.Exceptions;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using Bit.Core.Exceptions;
 using Template.Application.Common.Contracts;
 
-namespace Template.Application.Localization.Extensions
+namespace Template.Application.Common.Localization.Extensions
 {
     public static class ValidationContextExtension
     {

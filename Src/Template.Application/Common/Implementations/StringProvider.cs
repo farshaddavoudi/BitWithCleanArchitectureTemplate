@@ -3,7 +3,7 @@ using ATA.Food.Shared.Localization.Resources.GeneralMessages;
 using Bit.Core.Exceptions;
 using Microsoft.Extensions.Localization;
 using Template.Application.Common.Contracts;
-using Template.Application.Localization.Resources;
+using Template.Application.Common.Localization.Resources;
 
 namespace Template.Application.Common.Implementations;
 

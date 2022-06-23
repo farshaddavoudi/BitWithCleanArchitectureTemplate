@@ -1,4 +1,4 @@
-﻿namespace Template.Application.Localization.Resources
+﻿namespace Template.Application.Common.Localization.Resources
 {
     public enum StringResourceType
     {

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.JSInterop;
 using System.Threading;
-using Template.Application.AppVersioning;
+using Template.Application.DTOs;
 using Template.Domain.Options;
 using Template.Domain.Shared;
 using Template.WebUI.Client.Extensions;

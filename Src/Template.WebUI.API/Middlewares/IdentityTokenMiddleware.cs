@@ -1,9 +1,10 @@
 ﻿using Bit.Core.Contracts;
 using Bit.Core.Exceptions;
 using Bit.Owin.Contracts;
+using MediatR;
 using Microsoft.AspNetCore.Http.Features;
 using System.Globalization;
-using Template.Application.Identity.Contracts;
+using Template.Application.DTOs;
 using Template.Domain.Entities.Identity;
 using Template.Domain.Shared;
 using ILogger = Bit.Core.Contracts.ILogger;
@@ -46,11 +47,10 @@ public class IdentityTokenMiddleware
                             .Value!
                     );
 
-                    var identityTokenService = context.RequestServices.GetRequiredService<IIdentityTokenService>();
+                    var mediator = context.RequestServices.GetRequiredService<IMediator>();
 
                     IdentityTokenEntity identityToken =
-                        (await identityTokenService
-                            .GetIdentityTokenById(identityTokenId, context.RequestAborted))!;
+                        await mediator.Send(new GetIdentityTokenByIdQuery(identityTokenId));
 
                     if (identityToken == null)
                         throw new UnauthorizedException();

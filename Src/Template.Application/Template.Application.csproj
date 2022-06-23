@@ -22,10 +22,11 @@
   <ItemGroup>
     <Folder Include="Common\Exceptions\" />
     <Folder Include="Common\PipelineBehaviours\" />
-    <Folder Include="Identity\Implementations\" />
     <Folder Include="Order\Commands\" />
     <Folder Include="Order\Queries\GetUserLastOrder\" />
     <Folder Include="Order\Queries\GetOrders\" />
+    <Folder Include="User\DTOs\" />
+    <Folder Include="User\Queries\GetIdentityTokenById\" />
   </ItemGroup>
 
   <ItemGroup>

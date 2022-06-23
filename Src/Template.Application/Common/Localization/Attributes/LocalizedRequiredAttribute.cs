@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using ATA.Food.Shared.Localization.Resources.DataAnnotations;
 
-namespace Template.Application.Localization.Attributes
+namespace Template.Application.Common.Localization.Attributes
 {
     public class LocalizedRequiredAttribute : RequiredAttribute
     {

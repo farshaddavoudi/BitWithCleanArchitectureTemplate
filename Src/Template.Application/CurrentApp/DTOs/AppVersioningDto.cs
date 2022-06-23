@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Template.Application.AppVersioning;
+namespace Template.Application.DTOs;
 
 [ComplexType]
 public class AppVersioningDto

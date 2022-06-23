@@ -1,16 +1,14 @@
 ﻿using AutoMapper;
-using Bit.Model.Contracts;
 using Template.Application.Order.DTOs;
 using Template.Domain.Entities.Order;
 
 namespace Template.Application.Common.Mappings;
 
-public class OrderMapperConfigurations : IMapperConfiguration
+public class OrderMapperProfile : Profile
 {
-    public void Configure(IMapperConfigurationExpression mapperConfigExpression)
+    public OrderMapperProfile()
     {
-        // OrderEntity => OrderQueryResult
-        mapperConfigExpression.CreateMap<OrderEntity, OrderDto>()
+        CreateMap<OrderEntity, OrderDto>()
             .ForMember(dto => dto.OrderStatus, config =>
                 config.MapFrom(entity => (int)entity.OrderStatus));
     }
