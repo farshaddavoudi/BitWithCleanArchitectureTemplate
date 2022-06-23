@@ -1,13 +1,11 @@
-﻿using AutoMapper.QueryableExtensions;
-using Template.Application.Common.Implementations;
-using Template.Application.Order.Contracts;
+﻿using Template.Application.Order.Contracts;
 using Template.Application.Order.DTOs;
 using Template.Domain.Entities.Order;
 using Template.Domain.Enums.Order;
 
 namespace Template.Application.Order.Implementations;
 
-public class OrderService : EntityService<OrderEntity>, IOrderService
+public class OrderService : IOrderService
 {
     private readonly IOrderRepository _orderRepository;
 
@@ -33,8 +31,10 @@ public class OrderService : EntityService<OrderEntity>, IOrderService
 
     public OrderDto GetFirstOrder()
     {
-        return _orderRepository.GetAll()
-            .ProjectTo<OrderDto>(Mapper.ConfigurationProvider)
-            .FirstOrDefault();
+        return null;
+
+        //return _orderRepository.GetAll()
+        //    .ProjectTo<OrderDto>(Mapper.ConfigurationProvider)
+        //    .FirstOrDefault();
     }
 }

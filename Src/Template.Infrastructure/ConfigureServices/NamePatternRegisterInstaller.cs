@@ -1,15 +1,15 @@
 ﻿using Autofac;
 using Bit.Core.Contracts;
 using System.Reflection;
-using Template.Application.Common.Contracts;
 using Template.Domain.Options;
+using Template.Infrastructure.Common.Contracts;
 
 namespace Template.Infrastructure.ConfigureServices;
 
 /// <summary>
 /// Register Assembly Public NonAbstract Classes with PropertyInjection enabled
 /// </summary>
-public class NamePatternRegisterInstaller : IInstaller
+public class NamePatternRegisterInstaller : IBitInstaller
 {
     public void InstallServices(IServiceCollection services, IDependencyManager dependencyManager, AppSettings appSettings)
     {

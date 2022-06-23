@@ -1,5 +1,4 @@
-﻿using ATA.Food.Server.Data.Repository;
-using ATABit.Data;
+﻿using ATABit.Data;
 using ATABit.Data.Contracts;
 using ATABit.Data.Interceptors;
 using ATABit.Model.Data.Contracts;
@@ -12,14 +11,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using System.Data.Common;
 using System.Reflection;
-using Template.Application.Common.Contracts;
 using Template.Domain.Options;
+using Template.Infrastructure.Common.Contracts;
 using Template.Infrastructure.Persistence.EF;
 using Template.Infrastructure.Persistence.EF.Repository;
 
 namespace Template.Infrastructure.ConfigureServices;
 
-public class DataAccessInstaller : IInstaller
+public class DataAccessInstaller : IBitInstaller
 {
     public void InstallServices(IServiceCollection services, IDependencyManager dependencyManager, AppSettings appSettings)
     {

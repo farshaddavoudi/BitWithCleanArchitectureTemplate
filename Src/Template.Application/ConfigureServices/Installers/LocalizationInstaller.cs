@@ -1,13 +1,11 @@
-﻿using Bit.Core.Contracts;
-using Template.Application.Common.Contracts;
-using Template.Application.Common.Implementations;
+﻿using Template.Application.Common.Contracts;
 using Template.Domain.Options;
 
-namespace Template.Application.ConfigureServices;
+namespace Template.Application.ConfigureServices.Installers;
 
 public class LocalizationInstaller : IInstaller
 {
-    public void InstallServices(IServiceCollection services, IDependencyManager dependencyManager, AppSettings appSettings)
+    public void InstallServices(IServiceCollection services, AppSettings appSettings)
     {
         //services.AddLocalization();
 
@@ -31,7 +29,7 @@ public class LocalizationInstaller : IInstaller
         //    };
         //});
 
-        dependencyManager.Register<IStringProvider, StringProvider>();
+        //dependencyManager.Register<IStringProvider, StringProvider>();
 
         //services.AddSingleton<IConfigureOptions<MvcOptions>, MvcConfigurationToProvideModelBindingMessage>();
     }

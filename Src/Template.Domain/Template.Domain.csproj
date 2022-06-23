@@ -26,4 +26,11 @@
     <PackageReference Include="ATA.Bit.Model" Version="6.2.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Update="AsyncFixer" Version="1.6.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
 </Project>

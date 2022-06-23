@@ -28,7 +28,7 @@ public class Program
         var installers = new[] { Assembly.GetExecutingAssembly() }.SelectMany(a => a.GetExportedTypes())
             .Where(c => c.IsClass && !c.IsAbstract && c.IsPublic && typeof(IInstaller).IsAssignableFrom(c))
             .Select(Activator.CreateInstance).Cast<IInstaller>().ToList();
-        installers.ForEach(i => i.InstallServices(builder.Services, null, new AppSettings { Client = clientAppSettings }));
+        installers.ForEach(i => i.InstallServices(builder.Services, new AppSettings { Client = clientAppSettings }));
 
         builder.UseLoadingBar();
 

@@ -1,5 +1,4 @@
-﻿using Bit.Core.Contracts;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Authorization;
 using Template.Application.Common.Contracts;
 using Template.Domain.Options;
@@ -10,7 +9,7 @@ namespace Template.WebUI.Client.ConfigureServices;
 
 public class AuthInstaller : IInstaller
 {
-    public void InstallServices(IServiceCollection services, IDependencyManager dependencyManager, AppSettings appSettings)
+    public void InstallServices(IServiceCollection services, AppSettings appSettings)
     {
         services.AddOptions();
 

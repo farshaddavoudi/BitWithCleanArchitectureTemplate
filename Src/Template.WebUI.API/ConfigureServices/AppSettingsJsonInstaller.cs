@@ -1,10 +1,10 @@
 ﻿using Bit.Core.Contracts;
-using Template.Application.Common.Contracts;
 using Template.Domain.Options;
+using Template.Infrastructure.Common.Contracts;
 
 namespace Template.WebUI.API.ConfigureServices;
 
-public class AppSettingsJsonInstaller : IInstaller
+public class AppSettingsJsonInstaller : IBitInstaller
 {
     public void InstallServices(IServiceCollection services, IDependencyManager dependencyManager, AppSettings appSettings)
     {

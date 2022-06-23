@@ -1,13 +1,13 @@
 ﻿using Bit.Core.Contracts;
 using Bit.Owin.Implementations;
 using System.Reflection;
-using Template.Application.Common.Contracts;
 using Template.Domain.Options;
+using Template.Infrastructure.Common.Contracts;
 using Template.Infrastructure.LogStore;
 
 namespace Template.Infrastructure.ConfigureServices;
 
-public class LoggerInstaller : IInstaller
+public class LoggerInstaller : IBitInstaller
 {
     public void InstallServices(IServiceCollection services, IDependencyManager dependencyManager, AppSettings appSettings)
     {

@@ -1,5 +1,4 @@
-﻿using Bit.Core.Contracts;
-using NetCore.AutoRegisterDi;
+﻿using NetCore.AutoRegisterDi;
 using System.Reflection;
 using Template.Application.Common.Contracts;
 using Template.Domain.Options;
@@ -8,7 +7,7 @@ namespace Template.WebUI.Client.ConfigureServices
 {
     public class AutoRegisterDiInstaller : IInstaller
     {
-        public void InstallServices(IServiceCollection services, IDependencyManager dependencyManager, AppSettings appSettings)
+        public void InstallServices(IServiceCollection services, AppSettings appSettings)
         {
             var webAssembly = Assembly.GetExecutingAssembly();
             var clientWebServiceAssembly = typeof(ClientAppSettings).Assembly;

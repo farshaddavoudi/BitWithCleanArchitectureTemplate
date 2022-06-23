@@ -8,7 +8,11 @@
 
 	<ItemGroup>
 		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
-		<PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="6.0.3" />
+		<PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="6.0.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.6" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.1.0" />
+		<PackageReference Include="NetCore.AutoRegisterDi" Version="2.1.0" />
 	</ItemGroup>
 
   <ItemGroup>
@@ -17,7 +21,18 @@
 
   <ItemGroup>
     <Folder Include="Common\Exceptions\" />
+    <Folder Include="Common\PipelineBehaviours\" />
     <Folder Include="Identity\Implementations\" />
+    <Folder Include="Order\Commands\" />
+    <Folder Include="Order\Queries\GetUserLastOrder\" />
+    <Folder Include="Order\Queries\GetOrders\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="AsyncFixer" Version="1.6.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

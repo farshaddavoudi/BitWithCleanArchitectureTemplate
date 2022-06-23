@@ -1,27 +1,26 @@
 ﻿using Bit.OData.ODataControllers;
+using MediatR;
 using System.Web.Http;
-using Template.Application.Order.Contracts;
 using Template.Application.Order.DTOs;
+using Template.Application.Order.Queries.GetUserLastOrder;
 
 namespace Template.WebUI.API.Controllers.Order;
 
 [AllowAnonymous]
 public class OrderController : DtoController
 {
-    private readonly IOrderService _orderService;
+    private readonly IMediator _mediator;
 
-    #region Constructor Injections
-
-    public OrderController(IOrderService orderService)
+    public OrderController(IMediator mediator)
     {
-        _orderService = orderService;
+        _mediator = mediator;
     }
 
-    #endregion
-
     [Function]
-    public OrderDto GetFirstOrder()
+    public async Task<OrderDto> GetFirstOrder(int userId, CancellationToken cancellationToken)
     {
-        return _orderService.GetFirstOrder();
+        var a = await _mediator.Send(new GetUserLastOrderQuery(userId), cancellationToken);
+
+        return a;
     }
 }

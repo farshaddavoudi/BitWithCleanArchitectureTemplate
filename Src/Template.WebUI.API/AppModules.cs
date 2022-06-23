@@ -1,5 +1,4 @@
-﻿using ATA.Food.Server.Data.Repository;
-using ATABit.Server;
+﻿using ATABit.Server;
 using ATABit.Shared.Extensions;
 using Bit.Core.Contracts;
 using Bit.Model.Implementations;
@@ -15,9 +14,10 @@ using Owin;
 using Swashbuckle.Application;
 using System.IO.Compression;
 using System.Reflection;
-using Template.Application.Common.Contracts;
 using Template.Domain.Options;
 using Template.Domain.Shared;
+using Template.Infrastructure;
+using Template.Infrastructure.Common.Contracts;
 using Template.Infrastructure.Identity;
 using Template.WebUI.API.ActionFilters;
 using Template.WebUI.API.Extensions;
@@ -53,14 +53,14 @@ public class AppModules : IAppModule
 
         dependencyManager.RegisterDtoEntityMapper();
         dependencyManager.RegisterMapperConfiguration<DefaultMapperConfiguration>();
-        dependencyManager.RegisterAutoMapperConfigurations(new[] { typeof(Program).Assembly, typeof(IEntityService<>).Assembly });
+        dependencyManager.RegisterAutoMapperConfigurations(new[] { typeof(APIAssemblyEntryPoint).Assembly, typeof(InfrastructureAssemblyEntryPoint).Assembly });
 
         services.AddRazorPages().AddApplicationPart(typeof(AppStartup).Assembly);
         services.AddControllers(options =>
         {
             options.Filters.Add(new ATAAuthorizeAttribute());
             options.Conventions.Add(new RouteTokenTransformerConvention(new CamelCaseDasherizeParameterTransformer()));
-        }).AddApplicationPart(typeof(AppStartup).Assembly);
+        }).AddApplicationPart(typeof(APIAssemblyEntryPoint).Assembly);
 
         services.AddResponseCompression(opts =>
         {
@@ -79,11 +79,21 @@ public class AppModules : IAppModule
 
         // Configure Dependencies with Service Installers 
         var serverAppSettings = AspNetCoreAppEnvironmentsProvider.Current.Configuration.GetSection(nameof(ServerAppSettings)).Get<ServerAppSettings>();
-        var assemblies = new[] { Assembly.GetExecutingAssembly(), typeof(IEntityService<>).Assembly, typeof(ATARepository<>).Assembly };
-        var installers = assemblies.SelectMany(a => a.GetExportedTypes())
-            .Where(c => c.IsClass && !c.IsAbstract && c.IsPublic && typeof(IInstaller).IsAssignableFrom(c))
-            .Select(Activator.CreateInstance).Cast<IInstaller>().ToList();
-        installers.ForEach(i => i.InstallServices(services, dependencyManager, new AppSettings { Server = serverAppSettings }));
+
+        var appSettings = new AppSettings { Server = serverAppSettings };
+
+        services.AddApplicationServices(appSettings);
+
+        var assemblies = new[] {
+            typeof(APIAssemblyEntryPoint).Assembly,
+            typeof(InfrastructureAssemblyEntryPoint).Assembly
+        };
+
+        var bitInstallers = assemblies.SelectMany(a => a.GetExportedTypes())
+            .Where(c => c.IsClass && !c.IsAbstract && c.IsPublic && typeof(IBitInstaller).IsAssignableFrom(c))
+            .Select(Activator.CreateInstance).Cast<IBitInstaller>().ToList();
+
+        bitInstallers.ForEach(i => i.InstallServices(services, dependencyManager, appSettings));
     }
 
     private void ConfigureMiddleware(IDependencyManager dependencyManager)

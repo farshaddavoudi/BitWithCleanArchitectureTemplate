@@ -12,23 +12,23 @@
 	<ItemGroup>
 		<PackageReference Include="Bit.Tooling.CodeGenerator.Task" Version="9.0.0" PrivateAssets="all" />
 		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.4" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.6" />
 		<PackageReference Include="Bit.Server.OData" Version="9.0.0" />
 		<PackageReference Include="Bit.Server.IdentityServer" Version="9.0.0" />
 		<PackageReference Include="Bit.Tooling.CodeAnalyzer" Version="9.0.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.1" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.6">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4">
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.6">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 
 		<PackageReference Include="Serilog.Enrichers.ClientInfo" Version="1.1.4" />
 		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.1-dev-00787" />
-		<PackageReference Include="Serilog.Exceptions" Version="8.1.0" />
+		<PackageReference Include="Serilog.Exceptions" Version="8.2.0" />
 		<PackageReference Include="Serilog.Sinks.Seq" Version="5.1.1" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
 		<PackageReference Include="System.Drawing.Common" Version="6.0.0" />
@@ -64,6 +64,13 @@
 
 	<ItemGroup>
 	  <Folder Include="Controllers\Order\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Update="AsyncFixer" Version="1.6.0">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+	  </PackageReference>
 	</ItemGroup>
 
 </Project>

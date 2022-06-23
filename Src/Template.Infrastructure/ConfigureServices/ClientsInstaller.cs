@@ -1,12 +1,12 @@
 ﻿using Bit.Core.Contracts;
-using Template.Application.Common.Contracts;
 using Template.Domain.Options;
+using Template.Infrastructure.Common.Contracts;
 
 // ReSharper disable once ObjectCreationAsStatement
 
 namespace Template.Infrastructure.ConfigureServices;
 
-public class ClientsInstaller : IInstaller
+public class ClientsInstaller : IBitInstaller
 {
     public void InstallServices(IServiceCollection services, IDependencyManager dependencyManager, AppSettings appSettings)
     {

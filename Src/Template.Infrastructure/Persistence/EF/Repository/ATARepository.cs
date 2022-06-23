@@ -4,9 +4,8 @@ using ATABit.Model.User.Contract;
 using Bit.Data.EntityFrameworkCore.Implementations;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using Template.Infrastructure.Persistence.EF;
 
-namespace ATA.Food.Server.Data.Repository;
+namespace Template.Infrastructure.Persistence.EF.Repository;
 
 public class ATARepository<TEntity> : EfCoreRepository<ATADbContext, TEntity>, IATARepository<TEntity>
     where TEntity : class, IATAMiniEntity, new()
