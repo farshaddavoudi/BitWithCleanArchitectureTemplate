@@ -10,7 +10,6 @@
     <Folder Include="Clients\" />
     <Folder Include="Common\Contracts\" />
     <Folder Include="Persistence\EF\Configuration\" />
-    <Folder Include="Persistence\EF\Repository\Order\" />
   </ItemGroup>
 
 	<ItemGroup>
