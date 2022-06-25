@@ -23,14 +23,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Src\Template.WebUI.API\!app_offline.htm = Src\Template.WebUI.API\!app_offline.htm
 		.gitignore = .gitignore
-		Architecture.txt = Architecture.txt
 		BitConfig.json = BitConfig.json
 		Directory.build.props = Directory.build.props
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.WebUI.API", "Src\Template.WebUI.API\Template.WebUI.API.csproj", "{D21B95E8-F6CC-4998-A0A3-21BDD52CCC08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.WebUI.Client", "Src\Template.WebUI.Client\Template.WebUI.Client.csproj", "{ABBD0912-83E6-4EDA-B4B6-8450A5851E09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.WebUI.Client", "Src\Template.WebUI.Client\Template.WebUI.Client.csproj", "{ABBD0912-83E6-4EDA-B4B6-8450A5851E09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
